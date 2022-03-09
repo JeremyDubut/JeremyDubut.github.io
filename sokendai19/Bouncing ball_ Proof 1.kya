@@ -1,0 +1,36 @@
+﻿Theorem "Bouncing ball"
+Functions         /* function symbols cannot change their value */
+  Real H;            /* initial height */
+  Real g;            /* gravity */
+  Real c;            /* damping coefficient */
+End.
+
+ProgramVariables  /* program variables may change their value over time */
+  Real z;            /* height */
+  Real v;            /* velocity */
+End.
+
+Problem
+  z>=0 & z=H
+  & v=0 & g>0 & 1>=c&c>0
+ ->
+  [
+    {
+      {z'=v,v'=-g&z>=0} ++ {?z=0; v:=-c*v;}
+    }*@invariant(2*g*H-v^2>=2*g*z & z>=0)
+  ] (z>=0 & z<=H)
+End.
+Tactic "Bouncing ball: Proof 2"
+implyR(1) ; loop({`2*g()*H()-v^2>=2*g()*z&z>=0`}, 1) ; <(
+  QE,
+  QE,
+  choiceb(1) ; andR(1) ; <(
+    boxAnd('R) ; andR(1) ; <(
+      dI('R),
+      dW('R) ; implyR(1) ; closeId
+      ),
+    composeb(1) ; testb(1) ; assignb(1.1) ; QE
+    )
+  )
+End.
+End.
