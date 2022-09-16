@@ -7,12 +7,58 @@
 	<meta name="keywords" content="Jeremy Dubut, Jérémy Dubut, computer science, mathematics, research">
 	<meta name="author" content="Jérémy Dubut">
 	<style>
-		h1 {text-align:center;}
-		h2 {text-align:center;background-color:SlateBlue;}
+		h1 {
+			text-align:center;
+			color: slateblue;
+		}
+		h2 {
+			text-align:center;
+			background-color:SlateBlue;
+			color: #eee;
+		}
 		h3 {text-align:center;}
 <!-- 		@media (prefers-color-scheme: dark) {
 	            svg {background-color: white;}
 	          } -->
+		.collapsible {
+			background-color: #eee;
+			color: #444;
+			cursor: pointer;
+			padding: 10px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+			border-top-left-radius:10px;
+			border-top-right-radius:10px;
+			border-bottom-left-radius:10px;
+			border-bottom-right-radius:10px;
+		}
+		.active, .collapsible:hover {
+			background-color: #ccc;
+		}
+		.content {
+			padding: 0 18px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+			background-color: #f1f1f1;
+			border-top-left-radius:10px;
+			border-top-right-radius:10px;
+			border-bottom-left-radius:10px;
+			border-bottom-right-radius:10px;
+		}
+		.collapsible:after {
+			content: url("expand.png"); 
+			font-size: 13px;
+			color: white;
+			float: right;
+			margin-left: 5px;
+		}
+		.active:after {
+			content: url("collapse.png");
+		}
 	</style>
 	<!-- generated with https://realfavicongenerator.net -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -55,6 +101,7 @@
 		<h3>Journals</h3>
 			<ol reversed type = "i">
 				<li id = "iv22">
+					<button type="button" class="collapsible">
 					<a href="http://group-mmm.org/~ichiro/">I. Hasuo</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, <a href="https://github.com/jameshaydon">J. Haydon</a>, 
 					J. Dubut, <a href="https://www.wpi.edu/people/faculty/bbohrer">R. Bohrer</a>, <a href="https://researchmap.jp/tsutomu.kobayashi?lang=en">T. Kobayashi</a>, 
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, <a href="http://group-mmm.org/~xiaoyi/">X. Zhang</a>, E. A. Pallas, 
@@ -62,104 +109,443 @@
 					K. Kamijo, Y. Shinya, and T. Suetomi<br>
 					<b><font color="#2E64FE">Goal-Aware RSS for Complex Scenarios Via Program Logic</font></b> 
 					(<a href="https://arxiv.org/pdf/2207.02387.pdf">pdf</a>, <a href="https://www.nii.ac.jp/news/release/2022/0707.html">NII news release</a>, <a href="https://www.jst.go.jp/pr/announce/20220707-3/index.html">JST news release</a>, <a href="https://youtu.be/du2AkljAe88">YouTube video</a>)<br>
-					<font color="#F5BCA9">IEEE Transactions on Intelligent Vehicles, 2022</font>
+					<font color="FF0000">IEEE Transactions on Intelligent Vehicles, 2022</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We introduce a goal-aware extension of responsibility-sensitive safety (RSS), 
+							a recent methodology for rule-based safety guarantee for automated driving systems (ADS). 
+							Making RSS rules guarantee goal achievement - in addition to collision avoidance as in the original RSS — 
+							requires complex planning over long sequences of manoeuvres. 
+							To deal with the complexity, we introduce a compositional reasoning framework based on program logic, 
+							in which one can systematically develop RSS rules for smaller subscenarios and combine them to obtain RSS 
+							rules for bigger scenarios. As the basis of the framework, we introduce a program logic dFHL that accommodates 
+							continuous dynamics and safety conditions. Our framework presents a dFHL-based workflow for deriving 
+							goal-aware RSS rules; we discuss its software support, too. We conducted experimental evaluation using RSS 
+							rules in a safety architecture. Its results show that goal-aware RSS is indeed effective in realising both 
+							collision avoidance and goal achievement.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							automated driving, safety, rule-based safety, responsibility-sensitive safety (RSS), program logic, 
+							Floyd-Hoare logic, differential dynamics, simplex architecture
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					J. Dubut and <a href="https://akihisayamada.github.io">A. Yamada</a><br>
 					<b><font color="#2E64FE">Fixed Point Theorems for Non-Transitive Relations.</font></b> (<a href="https://arxiv.org/abs/2009.13065">pdf</a>, <a href="https://www.isa-afp.org/entries/Complete_Non_Orders.html">AFP entry</a>)<br>
-					<font color="#F5BCA9">Logical Methods in Computer Science 18(1), pages 30:1-30:24, 2022.<br>
-					Extended version of [<a href="#itp19">7</a>].</font>
+					<font color="#FF0000">Logical Methods in Computer Science 18(1), pages 30:1-30:24, 2022.</font><br>
+					Extended version of [<a href="#itp19">7</a>].
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							In this paper, we develop an Isabelle/HOL library of order-theoretic fixed-point theorems. 
+							We keep our formalization as general as possible: we reprove several well-known results about complete orders, 
+							often with only antisymmetry or attractivity, a mild condition implied by either antisymmetry or transitivity. 
+							In particular, we generalize various theorems ensuring the existence of a quasi-fixed point of monotone maps 
+							over complete relations, and show that the set of (quasi-)fixed points is itself complete. 
+							This result generalizes and strengthens theorems of Knaster-Tarski, Bourbaki-Witt, Kleene, Markowsky, 
+							Pataraia, Mashburn, Bhatta-George, and Stouti-Maaden.
+							<br>
+						<b><u>Key words:</u></b><br> 
+							Order Theory, Lattice Theory, Fixed-Points, Isabelle/HOL
+						</p>
+					</div>
 				</li>
 				<li>
+					<button type="button" class="collapsible">
 					<a href="https://davidsprunger.com">D. Sprunger</a>, <a href="http://group-mmm.org/~s-katsumata/index-e.html">S. Katsumata</a>, J. Dubut, and <a href="http://group-mmm.org/~ichiro/">I. Hasuo</a><br>
-					<b><font color="#2E64FE">Fibrational Bisimulations and Quantitative Reasoning: Extended Version.</font></b> (pdf soon)<br>
-					<font color="#F5BCA9">Journal of Logic and Computation 31(6), pages 1526-1559, 2021.<br>
-					Extended version of [<a href="#cmcs18">4</a>].</font>
+					<b><font color="#2E64FE">Fibrational Bisimulations and Quantitative Reasoning: Extended Version.</font></b> (<a href="papers/jlc21.pdf">pdf</a>)<br>
+					<font color="#FF0000">Journal of Logic and Computation 31(6), pages 1526-1559, 2021.</font><br>
+					Extended version of [<a href="#cmcs18">4</a>].
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							Bisimulation and bisimilarity are fundamental notions in comparing state-based systems. 
+							Their extensions to a variety of systems have been actively pursued in recent years, 
+							a notable direction being quantitative extensions. In this paper we enhance a categorical 
+							framework for such extended (bi)simulation notions. We use coalgebras as system models and 
+							fibrations for organizing predicates—following the seminal work by Hermida and Jacobs. 
+							Endofunctor liftings are crucial predicate-forming ingredients; the first contribution of 
+							this work is to extend several extant lifting techniques from particular fibrations to 
+							CLat∧-fibrations over Set. The second contribution of this work is to introduce endolifting 
+							morphisms as a mechanism for comparing predicates between fibrations. 
+							We apply these techniques by deriving some known properties of the Hausdorff pseudometric 
+							and approximate bisimulation in control theory.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Fibration, approximate bisimulation, behavioural metric, functor lifting
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					<a href="https://thorsten-wissmann.de">T. Wißmann</a>, <a href="https://www8.cs.fau.de/milius">S. Milius</a>, <a href="http://group-mmm.org/~s-katsumata/index-e.html">S. Katsumata</a>, and J. Dubut<br>
 					<b><font color="#2E64FE">A Coalgebraic View on Reachability.</font></b> (<a href="https://arxiv.org/pdf/1901.10717.pdf">pdf</a>)<br>
-					<font color="#F5BCA9">	Commentationes Mathematicae Universitatis Carolinae 60(4), pages 605-638, 2019.</font>
+					<font color="#FF0000">Commentationes Mathematicae Universitatis Carolinae 60(4), pages 605-638, 2019.</font><br>
+					Special issue dedicated to Věra Trnková.
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							Coalgebras for an endofunctor provide a category-theoretic framework for modeling a wide range of 
+							state-based systems of various types. We provide an iterative construction of the reachable part of 
+							a given pointed coalgebra that is inspired by and resembles the standard breadth-first search 
+							procedure to compute the reachable part of a graph. We also study coalgebras in Kleisli categories: 
+							for a functor extending a functor on the base category, we show that the reachable part of a given 
+							pointed coalgebra can be computed in that base category.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Coalgebra, breadth-first search, reachability
+						</p>
+					</div>
 				</li>
 				<li>
+					<button type="button" class="collapsible">
 					J. Dubut, <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a>, and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a><br>
 					<b><font color="#2E64FE">Directed homology theories and Eilenberg-Steenrod axioms.</font></b> (<a href="papers/apcs17.pdf">pdf</a>)<br>
-					<font color="#F5BCA9">Applied Categorical Structures 25(5), pages 775-807, 2017.<br>
-					Extended version of [<a href="#icalp15">1</a>].</font>
+					<font color="#FF0000">Applied Categorical Structures 25(5), pages 775-807, 2017.</font><br>
+					Extended version of [<a href="#icalp15">1</a>].
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							In this paper, we define and study a homology theory, that we call “natural homology”, 
+							which associates a natural system of abelian groups to every space in a large class of 
+							directed spaces and precubical sets. We show that this homology theory enjoys many 
+							important properties, as an invariant for directed homotopy. Among its properties, 
+							we show that subdivided precubical sets have the same homology type as the original ones;
+							similarly, the natural homology of a precubical set is of the same type as the natural 
+							homology of its geometric realization. By same type we mean equivalent up to some form of 
+							bisimulation, that we define using the notion of open map. Last but not least, natural homology, 
+							for the class of spaces we consider, exhibits very important properties such as Hurewicz theorems, 
+							and most of Eilenberg-Steenrod axioms, in particular the dimension, homotopy, additivity and 
+							exactness axioms. This last axiom is studied in a general framework of (generalized) exact sequences.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Algebraic topology, directed topology, homology theory, exact sequences
+						</p>
+					</div>
 				</li>
 			</ol>
 		<h3>Conferences</h3>
 			<ol reversed type = "1">
 				<li id = "cdc22">
+					<button type="button" class="collapsible">
 					<a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, <a href="https://github.com/jameshaydon">J. Haydon</a>, J. Dubut, <a href="http://www.ahmet.ac">A. Cetinkaya</a>, and <a href="https://psasinee.github.io">S. Pruekprasert</a><br>
-					<b><font color="#2E64FE">Logic for Timed Agent Network Topologies.</font></b> (pdf coming soon)<br>
-					<font color="#F5BCA9">	In CDC'22, 2022.</font>
+					<b><font color="#2E64FE">Logic for Timed Agent Network Topologies.</font></b> (<a href="https://group-mmm.org/~eberhart/research/mu-tgl.pdf">pdf</a>)<br>
+					<font color="#FF0000">In CDC'22, 2022.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We define μTGL, a spatio-temporal logic with fixed points and first-order agent quantification 
+							whose expressive power allows the definition of topological properties of networks of communicating agents. 
+							The existence of temporal operators and fixed points requires particular care when defining its semantics. 
+							We also give a streaming monitoring algorithm for μTGL formulas. Finally, we demonstrate the logic's 
+							usefulness on an example, where we monitor a complex property that ensures resilient consensus.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Spatio-temporal logic, network of agents, monitoring, netwrok topology, resilient consensus
+						</p>
+					</div>
 				</li>
  				<li> 
+					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, and J. Dubut<br>
 					<b><font color="#2E64FE">Fast Synthesis for Symbolic Self-triggered Control under Right-recursive LTL Specifications.</font></b> (<a href="https://arxiv.org/pdf/2103.16122.pdf">pdf</a>)<br>
-					<font color="#F5BCA9">	In CDC'21, 2021.</font>
+					<font color="#FF0000">	In CDC'21, 2021.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We extend previous work on symbolic self-triggered control for non-deterministic continuous-time non-linear systems 
+							without stability assumptions to a larger class of specifications. Our goal is to synthesise a controller for two objectives: 
+							the first one is modelled as a right-recursive LTL formula, and the second one is to ensure that the average communication 
+							rate between the controller and the system stays below a given threshold. We translate the control problem to solving a 
+							mean-payoff parity game played on a discrete graph. Apart from extending the class of specifications, 
+							we propose a heuristic method to shorten the computation time. Finally, we illustrate our results on the example of a 
+							navigating nonholonomic robot with several specifications.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Self-triggered control, symbolic model, mean-payoff parity games, LTL specifications
+						</p>
+					</div>
  				</li>
 				<li id = "icarcv20"> 
+					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, and J. Dubut<br>
 					<b><font color="#2E64FE">Symbolic Self-triggered Control of Continuous-time Non-deterministic Systems without Stability Assumptions for 2-LTL Specifications.</font></b> (<a href="https://arxiv.org/pdf/2010.11663.pdf">pdf</a>)<br>
-					<font color="#F5BCA9">In ICARCV'20, 2020.</font> <a href="papers/icarcv-award20.pdf">Best paper award finalist!</a>
+					<font color="#FF0000">In ICARCV'20, 2020.</font> <a href="papers/icarcv-award20.pdf">Best paper award finalist!</a>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We propose a symbolic self-triggered controller synthesis procedure for non-deterministic continuous-time 
+							nonlinear systems without stability assumptions. The goal is to compute a controller that satisfies two 
+							objectives. The first objective is represented as a specification in a fragment of LTL, which we call 2-LTL. 
+							The second one is an energy objective, in the sense that control inputs are issued only when necessary, 
+							which saves energy. To this end, we first quantise the state and input spaces, and then translate the 
+							controller synthesis problem to the computation of a winning strategy in a mean- payoff parity game. 
+							We illustrate the feasibility of our method on the example of a navigating nonholonomic robot.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Self-triggered control, symbolic model, mean-payoff parity games, LTL specifications
+						</p>
+					</div>
 				</li>
 				<li id = "ifac20"> 
+					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, <a href="http://group-mmm.org/~toru/">T. Takisaka</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, <a href="http://www.ahmet.ac">A. Cetinkaya</a>, and J. Dubut<br>
 					<b><font color="#2E64FE">Moment Propagation of Discrete-Time Stochastic Polynomial Systems using Truncated Carleman Linearization.</font></b> (<a href="https://arxiv.org/pdf/1911.12683.pdf">pdf</a>)<br>
-					<font color="#F5BCA9">In IFAC'20, 2020.</font>
+					<font color="#FF0000">In IFAC'20, 2020.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We propose a method to compute an approximation of the moments of a discrete-time stochastic polynomial system. 
+							We use the Carleman linearization technique to transform this finite-dimensional polynomial system into an 
+							infinite-dimensional linear one. After taking expectation and truncating the induced deterministic dynamics, 
+							we obtain a finite-dimensional linear deterministic system, which we then use to iteratively compute 
+							approximations of the moments of the original polynomial system at different time steps. 
+							We provide upper bounds on the approximation error for each moment and show that, 
+							for large enough truncation limits, the proposed method precisely computes moments for sufficiently small 
+							degrees and numbers of time steps. We use our proposed method for safety analysis to compute bounds on the 
+							probability of the system state being outside a given safety region. 
+							Finally, we illustrate our results on two concrete examples, a stochastic logistic map and a vehicle 
+							dynamics under stochastic disturbance.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Stochastic systems, nonlinear systems, probabilistic safety analysis, moment computation, Carleman linearization
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					J. Dubut<br>
 					<b><font color="#2E64FE">Bisimilarity of diagrams.</font></b> (<a href="https://arxiv.org/pdf/1804.10886.pdf">pdf</a>, <a href="presentations/ramics20.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=evgYDpn3E64">youtube video</a>)<br>
-					<font color="#F5BCA9">In RAMiCS'20, LNCS 12062, pages 65-81, Springer, 2020.</font>
+					<font color="#FF0000">In RAMiCS'20, LNCS 12062, pages 65-81, Springer, 2020.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							In this paper, we investigate diagrams, namely functors from any small category to a fixed category, 
+							and more particularly, their bisimilarity. Initially defined using the theory of open maps of Joyal et al., 
+							we prove two characterisations of this bisimilarity: it is equivalent to the existence of a bisimulation-like 
+							relation and has a logical characterisation à la Hennessy and Milner. 
+							We then prove that we capture both path bisimilarity and strong path bisimilarity of any small open maps 
+							situation. We then look at the particular case of finitary diagrams with values in real or rational vector 
+							spaces. We prove that checking bisimilarity and satisfiability of a positive formula by a diagram are both 
+							decidable by reducing to a problem of existence of invertible matrices with linear conditions, 
+							which in turn reduces to the existential theory of the reals.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Open maps, Diagrams, Path logic, Existential theories
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					<a href="http://www.lsv.fr/~kolcak/">J. Kolčák</a>, J. Dubut, <a href="http://group-mmm.org/~ichiro/">I. Hasuo</a>, <a href="http://group-mmm.org/~s-katsumata/index-e.html">S. Katsumata</a>, 
 					<a href="https://davidsprunger.com">D. Sprunger</a>, and <a href="https://akihisayamada.github.io">A. Yamada</a><br>
 					<b><font color="#2E64FE">Relational Differential Dynamic Logic.</font></b> (<a href="https://arxiv.org/pdf/1903.00153.pdf">pdf</a>, <a href="http://group-mmm.org/rddl_tacas_2020/">code</a>)<br>
-					<font color="#F5BCA9">	In TACAS'20, LNCS 12078, pages 191-208, Springer, 2020.</font>
+					<font color="#FF0000">	In TACAS'20, LNCS 12078, pages 191-208, Springer, 2020.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							In the field of quality assurance of hybrid systems, Platzer's differential dynamic logic (dL) is widely 
+							recognized as a deductive verification method with solid mathematical foundations and sophisticated 
+							tool support. Motivated by case studies provided by our industry partner, we study a relational 
+							extension of dL, aiming to formally prove statements such as “an earlier engagement of the emergency 
+							brake yields a smaller collision speed.” A main technical challenge is to combine two dynamics, 
+							so that the powerful inference rules of dL (such as the differential invariant rules) can be applied to 
+							such relational reasoning, yet in such a way that we relate two different time points. 
+							Our contributions are a semantical theory of time stretching, and the resulting synchronization rule that 
+							expresses time stretching by the syntactic operation of Lie derivative. 
+							We implemented this rule as an extension of KeYmaera X, by which we successfully verified relational 
+							properties of a few models taken from the automotive domain.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							hybrid system, cyber-physical system, formal verification, theorem proving, dynamic logic
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, <a href="http://group-mmm.org/~xiaoyi/">X. Zhang</a>, J. Dubut, <a href="http://group-mmm.org/~chao_h/">C. Huang</a>, and <a href="https://researchmap.jp/m.kishida/">M. Kishida</a><br>
 					<b><font color="#2E64FE">Decision Making for Autonomous Vehicles at Unsignalized Intersection in Presence of Malicious Vehicles.</font></b> (<a href="https://arxiv.org/pdf/1904.10158.pdf">pdf</a>)<br>
-					<font color="#F5BCA9">	In ITSC'19, IEEE, 2019.</font>
+					<font color="#FF0000">	In ITSC'19, IEEE, 2019.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							In this paper, we investigate the decision making of autonomous vehicles in an unsignalized intersection in 
+							presence of malicious vehicles, which are vehicles that do not respect the law by not using the proper 
+							rules of the right of way. Each vehicle computes its control input as a Nash equilibrium of a game 
+							determined by the priority order based on its own belief: each of non-malicious vehicle bases its order on 
+							the law, while a malicious one considers itself as having priority. 
+							To illustrate the effectiveness of our method, we provide numerical simulations, with different scenarios 
+							given by different cases of malicious vehicles.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Decision making, Autonomous vehicles, Games, Acceleration, Safety, Roads
+						</p>
+					</div>
 				</li>
 				<li id = "itp19"> 
+					<button type="button" class="collapsible">
 					<a href="https://akihisayamada.github.io">A. Yamada</a> and J. Dubut<br>
 					<b><font color="#2E64FE">Complete Non-Orders and Fixed Points.</font></b> (<a href="papers/itp19.pdf">pdf</a>, <a href="https://www.isa-afp.org/release/afp-Complete_Non_Orders-2020-04-18.tar.gz">AFP entry (depreciated)</a>, <a href="presentations/akihisaitp19.pdf">slides by Akihisa</a>)<br>
-					<font color="#F5BCA9">	In ITP'19, Leibniz International Proceedings in Informatics 141, pages 30:1-30:16. Leibniz-Zentrum für Informatik, 2019.</font>
+					<font color="#FF0000">	In ITP'19, Leibniz International Proceedings in Informatics 141, pages 30:1-30:16. Leibniz-Zentrum für Informatik, 2019.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							In this paper, we develop an Isabelle/HOL library of order-theoretic concepts, such as various 
+							completeness conditions and fixed-point theorems. We keep our formalization as general as possible:
+							we reprove several well-known results about complete orders, often without any property of ordering,
+							thus complete non-orders. In particular, we generalize the Knaster–Tarski theorem so that we ensure
+							the existence of a quasi-fixed point of monotone maps over complete non-orders, and show that
+							the set of quasi-fixed points is complete under a mild condition—attractivity—which is implied by
+							either antisymmetry or transitivity. This result generalizes and strengthens a result by Stauti and
+							Maaden. Finally, we recover Kleene's fixed-point theorem for omega-complete non-orders, again
+							using attractivity to prove that Kleene's fixed points are least quasi-fixed points.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Order Theory, Lattice Theory, Fixed-Points, Isabelle/HOL
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					J. Dubut<br>
 					<b><font color="#2E64FE">Trees in partial Higher Dimensional Automata.</font></b> (<a href="https://arxiv.org/pdf/1804.10894.pdf">pdf</a>, <a href="presentations/fossacs19.pdf">slides</a>)<br>
-					<font color="#F5BCA9">	In FoSSaCS'19, LNCS 11425, pages 224-241, Springer, 2019.</font> <a href="https://www.etaps.org/2019/best-papers">EATCS best paper award!</a>
+					<font color="#FF0000">	In FoSSaCS'19, LNCS 11425, pages 224-241, Springer, 2019.</font> <a href="https://www.etaps.org/2019/best-papers">EATCS best paper award!</a>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							In this paper, we give a new definition of partial Higher Dimension Automata using lax functors. 
+							This definition is simpler and more natural from a categorical point of view, but also matches more 
+							clearly the intuition that pHDA are Higher Dimensional Automata with some missing faces. 
+							We then focus on trees. Originally, for example in transition systems, trees are defined as those systems 
+							that have a unique path property. To understand what kind of unique property is needed in pHDA, 
+							we start by looking at trees as colimits of paths. This definition tells us that trees are exactly the 
+							pHDA with the unique path property modulo a notion of homotopy, and without any shortcuts. 
+							This property allows us to prove two interesting characterisations of trees: 
+							trees are exactly those pHDA that are an unfolding of another pHDA; 
+							and trees are exactly the cofibrant objects, much as in the language of Quillen's model structure. 
+							In particular, this last characterisation gives the premisses of a new understanding of concurrency 
+							theory using homotopy theory.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Higher Dimensional Automata, trees, homotopy theories
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					<a href="https://thorsten-wissmann.de">T. Wißmann</a>, J. Dubut, <a href="http://group-mmm.org/~s-katsumata/index-e.html">S. Katsumata</a>, and <a href="http://group-mmm.org/~ichiro/">I. Hasuo</a><br>
 					<b><font color="#2E64FE">Path category for free - Open morphisms from coalgebras with non-deterministic branching.</font></b> (<a href="https://arxiv.org/pdf/1811.12294.pdf">pdf</a>, <a href="presentations/thorstenfossacs19.pdf">slides by Thorsten</a>)<br>
-					<font color="#F5BCA9">In FoSSaCS'19, LNCS 11425, pages 523-540, Springer, 2019.</font>
+					<font color="#FF0000">In FoSSaCS'19, LNCS 11425, pages 523-540, Springer, 2019.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							There are different categorical approaches to variations of transition systems and their bisimulations. 
+							One is coalgebra for a functor G, where a bisimulation is defined as a span of G-coalgebra homomorphism. 
+							Another one is in terms of path categories and open morphisms, where a bisimulation is defined as a span 
+							of open morphisms. This similarity is no coincidence: given a functor G, fulfilling certain conditions, 
+							we derive a path-category for pointed G-coalgebras and lax homomorphisms, such that the open morphisms 
+							turn out to be precisely the G-coalgebra homomorphisms. The above construction provides path-categories 
+							and trace semantics for free for different flavours of transition systems: (1) non-deterministic tree automata 
+							(2) regular nondeterministic nominal automata (RNNA), an expressive automata notion living in nominal sets 
+							(3) multisorted transition systems. This last instance relates to Lasota's construction, 
+							which is in the converse direction.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Coalgebra, Open maps, Categories, Nominal Sets
+						</p>
+					</div>
 				</li>
 				<li id = "cmcs18">
+					<button type="button" class="collapsible">
 					<a href="https://davidsprunger.com">D. Sprunger</a>, <a href="http://group-mmm.org/~s-katsumata/index-e.html">S. Katsumata</a>, J. Dubut, and <a href="http://group-mmm.org/~ichiro/">I. Hasuo</a><br>
 					<b><font color="#2E64FE">Fibrational Bisimulations and Quantitative Reasoning.</font></b> (<a href="papers/cmcs18.pdf">pdf</a>, <a href="https://s3-us-west-2.amazonaws.com/terrastatic/media/cmcs2018slides.pdf">slides by David</a>)<br>
-					<font color="#F5BCA9">In CMCS'18, LNCS 11202, pages 190-213, Springer, 2018.</font>
+					<font color="#FF0000">In CMCS'18, LNCS 11202, pages 190-213, Springer, 2018.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							Bisimulation and bisimilarity are fundamental notions in comparing state-based systems. 
+							Their extensions to a variety of systems have been actively pursued in recent years, a notable direction 
+							being quantitative extensions. In this paper we present an abstract categorical framework for such extended 
+							(bi)simulation notions. We use coalgebras as system models and fibrations for organizing predicates — 
+							following the seminal work by Hermida and Jacobs — but our focus is on the structural aspect of fibrational 
+							frameworks. Specifically we use morphisms of fi- brations as well as canonical liftings of functors via 
+							Kan extensions. We apply this categorical framework by deriving some known properties of the Hausdorff 
+							pseudometric and approximate bisimulation in control theory.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Fibration, approximate bisimulation, behavioural metric, functor lifting
+						</p>
+					</div>
 				</li>
 				<li>
+					<button type="button" class="collapsible">
 					J. Dubut, <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a>, and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a><br>
 					<b><font color="#2E64FE">The Directed Homotopy Hypothesis.</font></b> (<a href="papers/csl16.pdf">pdf</a>, <a href="presentations/csl16.pdf">slides</a>)<br>
-					<font color="#F5BCA9">In CSL'16, Leibniz International Proceedings in Informatics 62, pages 9:1-9:16. Leibniz-Zentrum für Informatik, 2016.</font>
+					<font color="#FF0000">In CSL'16, Leibniz International Proceedings in Informatics 62, pages 9:1-9:16. Leibniz-Zentrum für Informatik, 2016.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							The homotopy hypothesis was originally stated by Grothendieck [13]: 
+							topological spaces should be “equivalent” to (weak) ∞-groupoids, which give algebraic representatives 
+							of homotopy types. Much later, several authors developed geometrizations of computational models, 
+							e.g. for rewriting, distributed systems, (homotopy) type theory etc. But an essential feature in the 
+							work set up in concurrency theory, is that time should be considered irreversible, giving rise to the 
+							field of directed algebraic topology. Following the path proposed by Porter, we state here a directed 
+							homotopy hypothesis: Grandis' directed topological spaces should be “equivalent” to a weak form of 
+							topologically enriched categories, still very close to (∞,1)-categories. 
+							We develop, as in ordinary algebraic topology, a directed homotopy equivalence and a weak equivalence, 
+							and show invariance of a form of directed homology.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							directed algebraic topology, partially enriched categories, homotopy hypothesis, geometric models for concurrency, higher category theory
+						</p>
+					</div>
 				</li>
 				<li>
+					<button type="button" class="collapsible">
 					J. Dubut, <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a>, and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a><br>
 					<b><font color="#2E64FE">Bisimulations and unfolding in P-accessible categorical models.</font></b> (<a href="papers/concur16.pdf">pdf</a>, <a href="presentations/concur16.pdf">slides</a>)<br>
-					<font color="#F5BCA9">In CONCUR'16, Leibniz International Proceedings in Informatics 59, pages 25:1-25:14. Leibniz-Zentrum für Informatik, 2016.</font>
+					<font color="#FF0000">In CONCUR'16, Leibniz International Proceedings in Informatics 59, pages 25:1-25:14. Leibniz-Zentrum für Informatik, 2016.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We propose a categorical framework for bisimulations and unfoldings that unifies the classical approach 
+							from Joyal and al. via open maps and unfoldings. This is based on a notion of categories accessible with 
+							respect to a subcategory of path shapes, i.e., for which one can define a nice notion of trees as glueings 
+							of paths. We show that transition systems and presheaf models are instances of our framework. 
+							We also prove that in our framework, several notions of bisimulation coincide, in particular an 
+							“operational one” akin to the standard definition in transition systems. Also, our notion of accessibility 
+							is preserved by coreflections. This also leads us to a notion of unfolding that behaves well in the 
+							accessible case: it is a right adjoint and is a universal covering, i.e., it is initial among the morphisms 
+							that have the unique lifting property with respect to path shapes. As an application, we prove that the 
+							universal covering of a groupoid, a standard construction in algebraic topology, is an unfolding, when 
+							the category of path shapes is well chosen.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							categorical models, bisimulation, coreflections, unfolding, universal covering
+						</p>
+					</div>
 				</li>
 				<li id = "icalp15">
+					<button type="button" class="collapsible">
 					J. Dubut, <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a>, and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a><br>
 					<b><font color="#2E64FE">Natural Homology.</font></b> (<a href="papers/icalp15.pdf">pdf</a>, <a href="presentations/icalp15.pdf">slides</a>)<br>
-					<font color="#F5BCA9">In ICALP'15, LNCS 9135, pages 171-183. Springer, 2015.</font>
+					<font color="#FF0000">In ICALP'15, LNCS 9135, pages 171-183. Springer, 2015.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We propose a notion of homology for directed algebraic topology, based on so-called natural systems of 
+							abelian groups, and which we call natural homology. As we show, natural homology has many desirable 
+							properties: it is invariant under isomorphisms of directed spaces, it is invariant under refinement 
+							(subdivision), and it is computable on cubical complexes.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							directed algebraic topology, homology, path space, geometric semantics, persistent homology, natural system
+						</p>
+					</div>
 				</li>
 			</ol>
 		<h3>Preprints</h3>
@@ -275,6 +661,24 @@
 			<h4>Logic</h4>
 				Those sessions were undergraduates, and were made in collaboration with Lucca Hirschi, Hubert Comon, Gilles Dowek, and Étienne Lozes.<br>
 				<a href="teachings/archive_logic.zip">archive of exercises</a>.
+
+
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+		
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.maxHeight){
+				content.style.maxHeight = null;
+			} else {
+				content.style.maxHeight = content.scrollHeight + "px";
+			} 
+			});
+		}
+		</script>
 			
 </body>
 </html>
