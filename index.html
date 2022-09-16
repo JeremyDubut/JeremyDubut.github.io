@@ -551,43 +551,178 @@
 		<h3>Preprints</h3>
 			<ul>
 				<li> 
+					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, J. Dubut, <a href="http://group-mmm.org/~toru/">T. Takisaka</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, and <a href="http://www.ahmet.ac">A. Cetinkaya</a><br>
 					<b><font color="#2E64FE">Moment Propagation Through Carleman Linearization with Application to Probabilistic Safety Analysis.</font></b> (<a href="https://arxiv.org/pdf/2201.08648.pdf">pdf</a>)<br>
-					<font color="#F5BCA9"><a href="https://arxiv.org/abs/2201.08648">arXiv:2201.08648</a>.<br>
-					Extended version of [<a href="#ifac20">11</a>].</font>
+					<font color="#FF0000"><a href="https://arxiv.org/abs/2201.08648">arXiv:2201.08648</a>.</font><br>
+					Extended version of [<a href="#ifac20">11</a>].
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We develop a method to approximate the moments of a discrete-time stochastic polynomial system. 
+							Our method is built upon Carleman linearization with truncation. Specifically, we take a stochastic 
+							polynomial system with finitely many states and transform it into an infinite-dimensional system with 
+							linear deterministic dynamics, which describe the exact evolution of the moments of the original polynomial 
+							system. We then truncate this deterministic system to obtain a finite-dimensional linear system, 
+							and use it for moment approximation by iteratively propagating the moments along the finite-dimensional 
+							linear dynamics across time. We provide efficient online computation methods for this propagation 
+							scheme with several error bounds for the approximation. Our result also shows that precise values of 
+							certain moments can be obtained when the truncated system is sufficiently large. Furthermore, we 
+							investigate techniques to reduce the offline computation load using reduced Kronecker power. 
+							Based on the obtained approximate moments and their errors, we also provide probability bounds for the 
+							state to be outside of given hyperellipsoidal regions. Those bounds allow us to conduct probabilistic 
+							safety analysis online through convex optimization. We demonstrate our results on a logistic map with 
+							stochastic dynamics and a vehicle dynamics subject to stochastic disturbance.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Stochastic systems, nonlinear systems, probabilistic safety analysis, moment computation, Carleman linearization
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, J. Dubut, <a href="http://group-mmm.org/~xiaoyi/">X. Zhang</a>, <a href="http://group-mmm.org/~chao_h/">C. Huang</a>, and <a href="https://researchmap.jp/m.kishida/">M. Kishida</a><br>
 					<b><font color="#2E64FE">A Game Theoretic Approach to Decision Making for Multiple Vehicles at Roundabout.</font></b> (<a href="https://arxiv.org/pdf/1904.06224.pdf">pdf</a>)<br>
-					<font color="#F5BCA9">	<a href="https://arxiv.org/abs/1904.06224">arXiv:1904.06224</a>.</font>
+					<font color="#FF0000">	<a href="https://arxiv.org/abs/1904.06224">arXiv:1904.06224</a>.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							In this paper, we study the decision making of multiple autonomous vehicles at a roundabout. 
+							The behaviours of the vehicles depend on their aggressiveness, which indicates how much they 
+							value speed over safety. We propose a distributed decision-making process that balances safety 
+							and speed of the vehicles. In the proposed process, each vehicle estimates other vehicles' 
+							aggressiveness and formulates the interactions among the vehicles as a finite sequential game. 
+							Based on the Nash equilibrium of this game, the vehicle predicts other vehicles' 
+							behaviours and makes decisions. We perform numerical simulations to illustrate the effectiveness 
+							of the proposed process, both for safety (absence of collisions), and speed (time spent within 
+							the roundabout).
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Decision making, Autonomous vehicles, Games, Acceleration, Safety, Roads
+						</p>
+					</div>
 				</li>
 				<li> 
+					<button type="button" class="collapsible">
 					J. Dubut, <a href="http://group-mmm.org/~s-katsumata/index-e.html">S. Katsumata</a>, <a href="http://group-mmm.org/~ichiro/">I. Hasuo</a>, and <a href="https://davidsprunger.com">D. Sprunger</a><br>
 					<b><font color="#2E64FE">Quantitative bisimulations using coreflections and open morphisms.</font></b> (<a href="https://arxiv.org/pdf/1809.09278.pdf">pdf</a>)<br>
-					<font color="#F5BCA9">	<a href="https://arxiv.org/abs/1809.09278">arXiv:1809.09278</a>.</font>
+					<font color="#FF0000">	<a href="https://arxiv.org/abs/1809.09278">arXiv:1809.09278</a>.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We investigate a canonical way of defining bisimilarity of systems when their semantics is given by a 
+							coreflection, typically in a category of transition systems. We use the fact, from Joyal et al., 
+							that coreflections preserve open morphisms situations in the sense that a coreflection induces a 
+							path subcategory in the category of systems in such a way that open bisimilarity with respect to the 
+							induced path category coincides with usual bisimilarity of their semantics. We prove that this method 
+							is particularly well-suited for systems with quantitative information: we canonically recover the path 
+							category of probabilistic systems from Cheng et al., and of timed systems from Nielsen et al., and, 
+							finally, we propose a new canonical path category for hybrid systems.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Open maps bisimilarity, coreflections
+						</p>
+					</div>
 				</li>
 			</ul>
 		<h3>Theses</h3>
 			<ul>
 				<li>
+					<button type="button" class="collapsible">
 					<b><font color="#2E64FE">Directed homotopy and homology theories for geometric models of true concurrency.</font></b> (<a href="papers/phd17.pdf">pdf</a>, <a href="presentations/phd17.pdf">slides</a>)<br>
-					<font color="#F5BCA9">PhD under the supervision of <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a> and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a> at Laboratoire Spécification et Vérification, ENS Paris-Saclay, Cachan, France, 2017.</font>
+					<font color="#FF0000">PhD under the supervision of <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a> and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a> at Laboratoire Spécification et Vérification, ENS Paris-Saclay, Cachan, France, 2017.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							Studying a system that evolves with time through its geometry is the main purpose of directed algebraic topology. 
+							This topic emerged in computer science, more particularly in true concurrency, where Pratt introduced the higher 
+							dimensional automata (HDA) in 1991 (actually, the idea of geometry of concurrency can be tracked down Dijkstra 
+							in 1965). Those automata are geometric by nature: every set of n processes executing independent actions can 
+							be modeled by a n-cube, and such an automaton then gives rise to a topological space, obtained by glueing 
+							such cubes together. This space naturally has a specific direction of time coming from the execution flow. 
+							It then seems natural to use tools from algebraic topology to study those spaces: paths model executions, 
+							homotopies of paths, that is continuous deformations of paths, model equivalence of executions modulo 
+							scheduling of independent actions, and so on, but all those notions must preserve the direction. 
+							This brings many complications and the theory must be done again.<br>
+							In this thesis, we develop homotopy and homology theories for those spaces with a direction. 
+							First, my directed homotopy theory is based on deformation retracts, that is continuous deformation 
+							of a big space on a smaller space, following directed paths that are inessential, meaning that they 
+							do not change the homotopy type of spaces of executions. This theory is related to categories of 
+							components and higher categories. Secondly, my directed homology theory follows the idea that we must 
+							look at the spaces of executions and those evolves with time. This evolution of time is handled by 
+							defining such homology as a diagram of spaces of executions and comparing such diagrams using a notion 
+							of bisimulation. This homology theory has many nice properties: it is computable on simple spaces, 
+							it is an invariant of our homotopy theory, it is invariant under simple action refinements and it has 
+							a theory of exactness.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							directed algebraic topology, true concurrency, homology, homotopy
+						</p>
+					</div>
 				</li>
 				<li>
+					<button type="button" class="collapsible">
 					<b><font color="#2E64FE">Homologie Dirigée.</font></b> (<a href="papers/master14.pdf">pdf</a>, in French)<br>
-					<font color="#F5BCA9">M2 internship under the supervision of <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a> and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a> at Ecole Polytechnique, Palaiseau, France, 2014.</font>
+					<font color="#FF0000">M2 internship under the supervision of <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a> and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a> at Ecole Polytechnique, Palaiseau, France, 2014.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							See my PhD thesis, which is a better and more complete version of this report.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							directed algebraic topology, directed homology, Eilenberg-Steenrod axioms
+						</p>
+					</div>
 				</li>
 				<li>
+					<button type="button" class="collapsible">
 					<b><font color="#2E64FE">Application de la topologie algébrique en informatique théorique.</font></b> (<a href="papers/master12.pdf">pdf</a>, in French)<br>
-					<font color="#F5BCA9">M1 internship under the supervision of <a href="https://hessbellwald-lab.epfl.ch/HessBellwald">K. Hess Bellwald</a> at Ecole Polytechnique Fédérale de Lausanne, Switzerland, 2012.</font>
+					<font color="#FF0000">M1 internship under the supervision of <a href="https://hessbellwald-lab.epfl.ch/HessBellwald">K. Hess Bellwald</a> at Ecole Polytechnique Fédérale de Lausanne, Switzerland, 2012.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							The purpose of this report is to describe some constructions by Raussen to represent the homotopy type 
+							of trace spaces of cubical complexes in directed algebraic topology. We then investigate methods to 
+							compute the homotopy and homology groups of those spaces. The first method uses homotopy colimits. The second is 
+							by describing the homotopy type as a generalized moment angle complex of a graphs generated by the holes
+							of the complex and their relationship with respect to the order.
+							We then formulated a conjecture that this is effectively the case, implying that the number of generators of 
+							homology is the number of chains of holes. In the case of domension 3, this would also imply that the  
+							fundamental group is isomorphic to the right-angled Artin associated with the grpah of holes, and that actually
+							the trace space is a Eilenberg-MacLane space for this group. Finally, we proved this statement in some 
+							easy cases such as dimension 2, chains of holes, or incomparable holes.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							directed algebraic topology, trace spaces, homology and homotopy groups, Salvetti complexes
+						</p>
+					</div>
 				</li>
 				<li>
+					<button type="button" class="collapsible">
 					<b><font color="#2E64FE">Décidabilité de la déduction et de l’équivalence statique pour le chiffrement homomorphique.</font></b> (<a href="papers/cs-bachelor11.pdf">pdf</a>, in French)<br>
-					<font color="#F5BCA9">L3 internship under the supervision of <a href="https://members.loria.fr/VCortier/">V. Cortier</a> at Laboratoire Lorrain de Recherche en Informatique et ses Applications, Nancy, France, 2011.</font>
+					<font color="#FF0000">L3 internship under the supervision of <a href="https://members.loria.fr/VCortier/">V. Cortier</a> at Laboratoire Lorrain de Recherche en Informatique et ses Applications, Nancy, France, 2011.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							to be written
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Decidable equational theory, static equivalence, homomorphic encryption
+						</p>
+					</div>
 				</li>
 				<li>
+					<button type="button" class="collapsible">
 					<b><font color="#2E64FE">Le modèle de Cucker-Smale: Émergence et formation de structures et de motifs dans les groupes (troupeaux, bancs, colonies, nuées)</font></b> (<a href="papers/maths-bachelor11.pdf">pdf</a>, in French)<br>
-					<font color="#F5BCA9">L3 internship with C. Eberhart under the supervision of <a href="https://sites.google.com/site/fredppascal/">F. Pascal</a> at Centre de Mathématiques et Leurs Applications, ENS Cachan, France, 2011.</font>
+					<font color="#FF0000">L3 internship with C. Eberhart under the supervision of <a href="https://sites.google.com/site/fredppascal/">F. Pascal</a> at Centre de Mathématiques et Leurs Applications, ENS Cachan, France, 2011.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+						<br>
+						<b><u>Key words:</u></b><br> 
+							flocking models, differential equations, simulations, cinetic model, Monte-Carlo method
+						</p>
+					</div>
 				</li>
 			</ul>
 	<hr>
