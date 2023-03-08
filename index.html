@@ -71,7 +71,7 @@
 	<title>Jérémy Dubut's webpage</title>
 </head>
 <body>
-	<h1> Jérémy Dubut (デュブ・ジェレミー)</h1>
+	<h1> Jérémy Dubut-Kross (デュブ黒須・ジェレミー)</h1>
 	<hr>
 	<h2>General information</h2>
 		<p>I am a researcher in the <a href="https://www.cpsec.aist.go.jp/team/ipsrt/index_en.html">Infrastructure Protection Security Research Team</a>
@@ -98,6 +98,10 @@
 		<ul>
 			<li> Our paper Weighted and Branching Bisimilarities from Generalized Open Maps (with Thorsten Wißmann)
 					has been accepted for presentation at FoSSaCS in Paris in April (see [<a href="#fossacs23">15</a>]).</li>
+			<li> I will most likely visit France in April 20-29, mostly to attend ETAPS in Paris. 
+					Reach out if you want to meet!</li>
+			<li> Our paper Moment Propagation Through Carleman Linearization with Application to Probabilistic Safety Analysis has been accepted for publication in Automatica. 
+					Stay tuned!</li>
 			<li> I will not be able to come but please consider attending the <a href="https://ncm29.math.aau.dk">29th Nordic Congress of Mathematicians</a>, 
 					and particularly GETCO, in Aalborg in July.</li>
 		</ul> 
@@ -114,6 +118,35 @@
 	<h2>Publications</h2>
 		<h3>Journals</h3>
 			<ol reversed type = "i">
+				<li> 
+					<button type="button" class="collapsible">
+					<a href="https://psasinee.github.io">S. Pruekprasert</a>, J. Dubut, <a href="http://group-mmm.org/~toru/">T. Takisaka</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, and <a href="http://www.ahmet.ac">A. Cetinkaya</a><br>
+					<b><font color="#2E64FE">Moment Propagation Through Carleman Linearization with Application to Probabilistic Safety Analysis.</font></b> (pdf and code to be made available soon)<br>
+					<font color="#FF0000">To appear in Automatica.</font><br>
+					Extended version of [<a href="#ifac20">11</a>].
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							We develop a method to approximate the moments of a discrete-time stochastic polynomial system. 
+							Our method is built upon Carleman linearization with truncation. Specifically, we take a stochastic 
+							polynomial system with finitely many states and transform it into an infinite-dimensional system with 
+							linear deterministic dynamics, which describe the exact evolution of the moments of the original polynomial 
+							system. We then truncate this deterministic system to obtain a finite-dimensional linear system, 
+							and use it for moment approximation by iteratively propagating the moments along the finite-dimensional 
+							linear dynamics across time. We provide efficient online computation methods for this propagation 
+							scheme with several error bounds for the approximation. Our result also shows that precise values of 
+							certain moments can be obtained when the truncated system is sufficiently large. Furthermore, we 
+							investigate techniques to reduce the offline computation load using reduced Kronecker power. 
+							Based on the obtained approximate moments and their errors, we also provide probability bounds for the 
+							state to be outside of given hyperellipsoidal regions. Those bounds allow us to conduct probabilistic 
+							safety analysis online through convex optimization. We demonstrate our results on a logistic map with 
+							stochastic dynamics and a vehicle dynamics subject to stochastic disturbance.
+						<br>
+						<b><u>Key words:</u></b><br> 
+							Stochastic systems, nonlinear systems, probabilistic safety analysis, moment computation, Carleman linearization
+						</p>
+					</div>
+				</li>
 				<li id = "iv22">
 					<button type="button" class="collapsible">
 					<a href="http://group-mmm.org/~ichiro/">I. Hasuo</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, <a href="https://github.com/jameshaydon">J. Haydon</a>, 
@@ -248,7 +281,7 @@
 					J. Dubut and <a href="https://thorsten-wissmann.de">T. Wißmann</a><br>
 					<b><font color="#2E64FE">Weighted and Branching Bisimilarities from Generalized Open Maps</font></b> 
 					(<a href="https://arxiv.org/pdf/2301.07004.pdf">pdf</a>)<br>
-					<font color="FF0000">FoSSaCS23</font>
+					<font color="FF0000">In FoSSaCS23</font>
 					</button>
 					<div class="content">
 						<p><b><u>Abstract:</u></b><br>
@@ -587,7 +620,7 @@
 			</ol>
 		<h3>Preprints</h3>
 			<ul>
-				<li> 
+				<!--<li> 
 					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, J. Dubut, <a href="http://group-mmm.org/~toru/">T. Takisaka</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, and <a href="http://www.ahmet.ac">A. Cetinkaya</a><br>
 					<b><font color="#2E64FE">Moment Propagation Through Carleman Linearization with Application to Probabilistic Safety Analysis.</font></b> (<a href="https://arxiv.org/pdf/2201.08648.pdf">pdf</a>)<br>
@@ -615,7 +648,7 @@
 							Stochastic systems, nonlinear systems, probabilistic safety analysis, moment computation, Carleman linearization
 						</p>
 					</div>
-				</li>
+				</li>-->
 				<li> 
 					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, J. Dubut, <a href="http://group-mmm.org/~xiaoyi/">X. Zhang</a>, <a href="http://group-mmm.org/~chao_h/">C. Huang</a>, and <a href="https://researchmap.jp/m.kishida/">M. Kishida</a><br>
