@@ -96,17 +96,14 @@
 	<hr>
 	<h2>Upcoming events and news</h2>
 		<ul>
-			<li> Our paper Weighted and Branching Bisimilarities from Generalized Open Maps (with Thorsten Wißmann)
-					has been accepted for presentation at FoSSaCS in Paris in April (see [<a href="#fossacs23">15</a>]).</li>
-			<li> I will most likely visit France in April 20-29, mostly to attend ETAPS in Paris. 
-					Reach out if you want to meet!</li>
-			<li> Our paper Moment Propagation Through Carleman Linearization with Application to Probabilistic Safety Analysis 
-					(with Sasinee Pruekprasert, Toru Takisaka, Clovis Eberhart, and Ahmet Cetinkaya) has been accepted for publication in Automatica (see [<a href="automatica23">vi</a>]). 
-					Stay tuned!</li>
 			<li> I will not be able to come but please consider attending the <a href="https://ncm29.math.aau.dk">29th Nordic Congress of Mathematicians</a>, 
 					and particularly GETCO, in Aalborg in July.</li>
 			<li>Our paper Formalizing Results on Directed Sets in Isabelle/HOL (with Akihisa Yamada) 
-				has been accepted for presentation at ITP in Bialystok (Poland) in August (more info soon).</li>
+				has been accepted for presentation at ITP in Bialystok (Poland) in August (see [<a href="#itp23">16</a>]).</li>
+			<li> My paper Aczel-Mendler Bisimulations in a Regular Category has been accepted for 
+				presentation at <a href="https://coalg.org/calco-mfps-2023/">CALCO</a>, in Bloomington, Indiana, in June
+				(see [<a href="#calco23">17</a>]). 
+			</li>
 		</ul> 
 	<hr>
 	<h2>Research interests</h2>
@@ -279,6 +276,61 @@
 			</ol>
 		<h3>Conferences</h3>
 			<ol reversed type = "1">
+				<li id = "calco23"> 
+					<button type="button" class="collapsible">
+					J. Dubut<br>
+					<b><font color="#2E64FE">Aczel-Mendler Bisimulations in a Regular Category.</font></b> (pdf soon)<br>
+					<font color="#FF0000">In CALCO'23.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							Aczel-Mendler bisimulations are a coalgebraic extension of a variety of 
+							computational relations between systems. 
+							It is usual to assume that the underlying category satisfies some form 
+							of axiom of choice, so that the theory enjoys desirable properties, 
+							such as closure under composition. In this paper, we accommodate the 
+							definition in a general regular category -- which does not necessarily 
+							satisfy any form of axiom of choice. We show that this general definition 
+							1) is closed under composition without using the axiom of choice, 
+							2) coincide with other types of coalgebraic formulations under milder conditions, 
+							3) coincide with the usual definition when the category has the regular axiom 
+							of choice. 
+							We then develop the particular case of toposes, where the formulation becomes 
+							nicer thanks  to the power-object monad, and extend the formalism to simulations. 
+							Finally, we describe several examples in Stone spaces, toposes for name-passing, 
+							and modules over a ring.
+						<br>
+						<b><u>Key words:</u></b><br> 
+						Regular Categories, Toposes, Bisimulations, Coalgebra
+						</p>
+					</div>
+				</li>
+				<li id = "itp23"> 
+					<button type="button" class="collapsible">
+					<a href="https://akihisayamada.github.io">A. Yamada</a> and J. Dubut<br>
+					<b><font color="#2E64FE">Formalizing Results on Directed Sets in Isabelle/HOL.</font></b> (pdf soon)<br>
+					<font color="#FF0000">In ITP'23.</font>
+					</button>
+					<div class="content">
+						<p><b><u>Abstract:</u></b><br>
+							Directed sets are of fundamental interest in domain theory and topology.
+							In this paper, we formalize some results on directed sets in Isabelle/HOL, 
+							most notably: under the axiom of choice,
+							a poset has a supremum for every directed set if and only if 
+							it does so for every chain;
+							and a function between such posets preserves suprema of directed sets if and only if 
+							it preserves suprema of chains.
+							The known pen-and-paper proofs of these results crucially use uncountable transfinite 
+							sequences, which are not directly implementable in Isabelle/HOL.
+							We show how to emulate such proofs by utilizing Isabelle/HOL's ordinal and 
+							cardinal library.
+							Thanks to the formalization, we relax some conditions for the above results.
+						<br>
+						<b><u>Key words:</u></b><br> 
+						Directed Sets, Completeness, Scott Continuous Functions, Ordinals, Isabelle/HO
+						</p>
+					</div>
+				</li>
 				<li id = "fossacs23">
 					<button type="button" class="collapsible">
 					J. Dubut and <a href="https://thorsten-wissmann.de">T. Wißmann</a><br>
@@ -623,7 +675,7 @@
 			</ol>
 		<h3>Preprints</h3>
 			<ul>
-				<li> 
+				<!--<li> 
 					<button type="button" class="collapsible">
 					J. Dubut<br>
 					<b><font color="#2E64FE">Aczel-Mendler Bisimulations in a Regular Category.</font></b> (<a href="https://arxiv.org/pdf/2303.04442.pdf">pdf</a>)<br>
@@ -651,7 +703,7 @@
 						Regular Categories, Toposes, Bisimulations, Coalgebra
 						</p>
 					</div>
-				</li>
+				</li>-->
 				<!--<li> 
 					<button type="button" class="collapsible">
 					<a href="https://psasinee.github.io">S. Pruekprasert</a>, J. Dubut, <a href="http://group-mmm.org/~toru/">T. Takisaka</a>, <a href="http://group-mmm.org/~eberhart/">C. Eberhart</a>, and <a href="http://www.ahmet.ac">A. Cetinkaya</a><br>
