@@ -6,60 +6,7 @@
 	<meta name="description" content="Jérémy Dubut's personal research webpage">
 	<meta name="keywords" content="Jeremy Dubut, Jérémy Dubut, computer science, mathematics, research">
 	<meta name="author" content="Jérémy Dubut">
-	<style>
-		h1 {
-			text-align:center;
-			color: slateblue;
-		}
-		h2 {
-			text-align:center;
-			background-color:SlateBlue;
-			color: #eee;
-		}
-		h3 {text-align:center;}
-<!-- 		@media (prefers-color-scheme: dark) {
-	            svg {background-color: white;}
-	          } -->
-		.collapsible {
-			background-color: #eee;
-			color: #444;
-			cursor: pointer;
-			padding: 10px;
-			width: 100%;
-			border: none;
-			text-align: left;
-			outline: none;
-			font-size: 15px;
-			border-top-left-radius:10px;
-			border-top-right-radius:10px;
-			border-bottom-left-radius:10px;
-			border-bottom-right-radius:10px;
-		}
-		.active, .collapsible:hover {
-			background-color: #ccc;
-		}
-		.content {
-			padding: 0 18px;
-			max-height: 0;
-			overflow: hidden;
-			transition: max-height 0.2s ease-out;
-			background-color: #f1f1f1;
-			border-top-left-radius:10px;
-			border-top-right-radius:10px;
-			border-bottom-left-radius:10px;
-			border-bottom-right-radius:10px;
-		}
-		.collapsible:after {
-			content: url("expand.png"); 
-			font-size: 13px;
-			color: white;
-			float: right;
-			margin-left: 5px;
-		}
-		.active:after {
-			content: url("collapse.png");
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- generated with https://realfavicongenerator.net -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -69,10 +16,32 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
 	<title>Jérémy Dubut's webpage</title>
+	<!-- <script src="scripts/sidemenu.js"></script> -->
 </head>
 <body>
-	<h1> Jérémy Dubut-Kross (デュブ黒須・ジェレミー)</h1>
-	<hr>
+	<!-- <button class="sidemenu" id="sideMenu" onclick="openMenu()">
+		&#9776;
+	</button>
+	<div class="contentSidemenu" id="sideMenuContent" onclick="closeMenu()">
+		<p>
+			<ul>
+				<a href"">&rsaquo; Home<br></a>
+				<a href"">&rsaquo; Publications<br></a>
+				<a href"">&rsaquo; Teachings<br></a>
+			</ul>
+		</p>
+	</div> -->
+	<header class="chapo" id="header">
+			<h1> Jérémy Dubut-Kross<br>(デュブ黒須・ジェレミー)</h1>
+		<nav class="chapoMenu">
+			<ul class="chapoMenuList">
+				<li class="chapoMenuItem"><a href="#">Home</a></li>
+				<li class="chapoMenuItem"><a href="#publis">Publications</a></li>
+				<li class="chapoMenuItem"><a href="#talks">Talks</a></li>
+				<li class="chapoMenuItem"><a href="#teachings">Teachings</a></li>
+			</ul>
+		</nav>
+	</header>
 	<h2>General information</h2>
 		<p>I am a researcher in the <a href="https://www.cpsec.aist.go.jp/team/ipsrt/index_en.html">Infrastructure Protection Security Research Team</a>
 			at the <a href="https://www.cpsec.aist.go.jp/index_en.html">Cyber Physical Security Research Center</a>
@@ -93,7 +62,6 @@
 			<a href="https://researchmap.jp/dubut/?lang=english">research map</a>, 
 			<a href="https://scholar.google.com/citations?user=k8NVQh8AAAAJ&hl=en">Google scholar</a>, 
 			<a href="https://orcid.org/0000-0002-2640-3065">orcid</a></p>
-	<hr>
 	<h2>Upcoming events and news</h2>
 		<ul>
 			<li> I will not be able to come but please consider attending the <a href="https://ncm29.math.aau.dk">29th Nordic Congress of Mathematicians</a>, 
@@ -114,7 +82,6 @@
 
 			</li>
 		</ul> 
-	<hr>
 	<h2>Research interests</h2>
 		<ul>
 			<li>categorical aspects of computer science</li>
@@ -123,8 +90,7 @@
 			<li>formal methods for CPS</li>
 			<li>proof assistants</li>
 		</ul>
-	<hr>
-	<h2>Publications</h2>
+	<h2 id="publis">Publications</h2>
 		<h3>Journals</h3>
 			<ol reversed type = "i">
 				<li id="automatica23"> 
@@ -139,7 +105,7 @@
 					<font color="#FF0000">To appear in Automatica.</font><br>
 					Extended version of [<a href="#ifac20">11</a>].
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We develop a method to approximate the moments of a discrete-time stochastic polynomial system. 
 							Our method is built upon Carleman linearization with truncation. Specifically, we take a stochastic 
@@ -185,7 +151,7 @@
 					<a href="https://youtu.be/du2AkljAe88">YouTube video</a>)<br>
 					<font color="FF0000">IEEE Transactions on Intelligent Vehicles, 2022</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We introduce a goal-aware extension of responsibility-sensitive safety (RSS), 
 							a recent methodology for rule-based safety guarantee for automated driving systems (ADS). 
@@ -215,7 +181,7 @@
 					<font color="#FF0000">Logical Methods in Computer Science 18(1), pages 30:1-30:24, 2022.</font><br>
 					Extended version of [<a href="#itp19">7</a>].
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In this paper, we develop an Isabelle/HOL library of order-theoretic fixed-point theorems. 
 							We keep our formalization as general as possible: we reprove several well-known results about complete orders, 
@@ -241,7 +207,7 @@
 					<font color="#FF0000">Journal of Logic and Computation 31(6), pages 1526-1559, 2021.</font><br>
 					Extended version of [<a href="#cmcs18">4</a>].
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							Bisimulation and bisimilarity are fundamental notions in comparing state-based systems. 
 							Their extensions to a variety of systems have been actively pursued in recent years, 
@@ -271,7 +237,7 @@
 					<font color="#FF0000">Commentationes Mathematicae Universitatis Carolinae 60(4), pages 605-638, 2019.</font><br>
 					Special issue dedicated to Věra Trnková.
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							Coalgebras for an endofunctor provide a category-theoretic framework for modeling a wide range of 
 							state-based systems of various types. We provide an iterative construction of the reachable part of 
@@ -295,7 +261,7 @@
 					<font color="#FF0000">Applied Categorical Structures 25(5), pages 775-807, 2017.</font><br>
 					Extended version of [<a href="#icalp15">1</a>].
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In this paper, we define and study a homology theory, that we call “natural homology”, 
 							which associates a natural system of abelian groups to every space in a large class of 
@@ -326,7 +292,7 @@
 					(pdf soon)<br>
 					<font color="#FF0000">In MFPS'23.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							Categorical semantics of type theories are often characterized as structure-preserving 
 							functors. This is because in category theory both the syntax and the domain of 
@@ -359,7 +325,7 @@
 					(<a href="https://arxiv.org/pdf/2303.04442.pdf">pdf (to be updated)</a>)<br>
 					<font color="#FF0000">In CALCO'23.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							Aczel-Mendler bisimulations are a coalgebraic extension of a variety of 
 							computational relations between systems. 
@@ -391,7 +357,7 @@
 					AFP entry soon)<br>
 					<font color="#FF0000">In ITP'23.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							Directed sets are of fundamental interest in domain theory and topology.
 							In this paper, we formalize some results on directed sets in Isabelle/HOL, 
@@ -420,7 +386,7 @@
 					<a href="presentations/fossacs23.pdf">slides</a>)<br>
 					<font color="FF0000">In FoSSaCS'23</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In the open map approach to bisimilarity, the paths and their runs in a given state-based system are 
 							the first-class citizens, and bisimilarity becomes a derived notion. While open maps were successfully 
@@ -447,7 +413,7 @@
 					(<a href="https://group-mmm.org/~eberhart/research/mu-tgl.pdf">pdf</a>)<br>
 					<font color="#FF0000">In CDC'22, 2022.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We define μTGL, a spatio-temporal logic with fixed points and first-order agent quantification 
 							whose expressive power allows the definition of topological properties of networks of communicating agents. 
@@ -469,7 +435,7 @@
 					(<a href="https://arxiv.org/pdf/2103.16122.pdf">pdf</a>)<br>
 					<font color="#FF0000">	In CDC'21, 2021.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We extend previous work on symbolic self-triggered control for non-deterministic continuous-time non-linear systems 
 							without stability assumptions to a larger class of specifications. Our goal is to synthesise a controller for two objectives: 
@@ -493,7 +459,7 @@
 					(<a href="https://arxiv.org/pdf/2010.11663.pdf">pdf</a>)<br>
 					<font color="#FF0000">In ICARCV'20, 2020.</font> <a href="papers/icarcv-award20.pdf">Best paper award finalist!</a>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We propose a symbolic self-triggered controller synthesis procedure for non-deterministic continuous-time 
 							nonlinear systems without stability assumptions. The goal is to compute a controller that satisfies two 
@@ -519,7 +485,7 @@
 					(<a href="https://arxiv.org/pdf/1911.12683.pdf">pdf</a>)<br>
 					<font color="#FF0000">In IFAC'20, 2020.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We propose a method to compute an approximation of the moments of a discrete-time stochastic polynomial system. 
 							We use the Carleman linearization technique to transform this finite-dimensional polynomial system into an 
@@ -547,7 +513,7 @@
 					<a href="https://www.youtube.com/watch?v=evgYDpn3E64">youtube video</a>)<br>
 					<font color="#FF0000">In RAMiCS'20, LNCS 12062, pages 65-81, Springer, 2020.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In this paper, we investigate diagrams, namely functors from any small category to a fixed category, 
 							and more particularly, their bisimilarity. Initially defined using the theory of open maps of Joyal et al., 
@@ -577,7 +543,7 @@
 					<a href="http://group-mmm.org/rddl_tacas_2020/">code</a>)<br>
 					<font color="#FF0000">	In TACAS'20, LNCS 12078, pages 191-208, Springer, 2020.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In the field of quality assurance of hybrid systems, Platzer's differential dynamic logic (dL) is widely 
 							recognized as a deductive verification method with solid mathematical foundations and sophisticated 
@@ -607,7 +573,7 @@
 					(<a href="https://arxiv.org/pdf/1904.10158.pdf">pdf</a>)<br>
 					<font color="#FF0000">	In ITSC'19, IEEE, 2019.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In this paper, we investigate the decision making of autonomous vehicles in an unsignalized intersection in 
 							presence of malicious vehicles, which are vehicles that do not respect the law by not using the proper 
@@ -632,7 +598,7 @@
 					<a href="presentations/akihisaitp19.pdf">slides by Akihisa</a>)<br>
 					<font color="#FF0000">	In ITP'19, Leibniz International Proceedings in Informatics 141, pages 30:1-30:16. Leibniz-Zentrum für Informatik, 2019.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In this paper, we develop an Isabelle/HOL library of order-theoretic concepts, such as various 
 							completeness conditions and fixed-point theorems. We keep our formalization as general as possible:
@@ -658,7 +624,7 @@
 					<font color="#FF0000">	In FoSSaCS'19, LNCS 11425, pages 224-241, Springer, 2019.</font> 
 					<a href="https://www.etaps.org/2019/best-papers">EATCS best paper award!</a>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In this paper, we give a new definition of partial Higher Dimension Automata using lax functors. 
 							This definition is simpler and more natural from a categorical point of view, but also matches more 
@@ -689,7 +655,7 @@
 					<a href="presentations/thorstenfossacs19.pdf">slides by Thorsten</a>)<br>
 					<font color="#FF0000">In FoSSaCS'19, LNCS 11425, pages 523-540, Springer, 2019.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							There are different categorical approaches to variations of transition systems and their bisimulations. 
 							One is coalgebra for a functor G, where a bisimulation is defined as a span of G-coalgebra homomorphism. 
@@ -718,7 +684,7 @@
 					<a href="https://s3-us-west-2.amazonaws.com/terrastatic/media/cmcs2018slides.pdf">slides by David</a>)<br>
 					<font color="#FF0000">In CMCS'18, LNCS 11202, pages 190-213, Springer, 2018.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							Bisimulation and bisimilarity are fundamental notions in comparing state-based systems. 
 							Their extensions to a variety of systems have been actively pursued in recent years, a notable direction 
@@ -744,7 +710,7 @@
 					<a href="presentations/csl16.pdf">slides</a>)<br>
 					<font color="#FF0000">In CSL'16, Leibniz International Proceedings in Informatics 62, pages 9:1-9:16. Leibniz-Zentrum für Informatik, 2016.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							The homotopy hypothesis was originally stated by Grothendieck [13]: 
 							topological spaces should be “equivalent” to (weak) ∞-groupoids, which give algebraic representatives 
@@ -772,7 +738,7 @@
 					<a href="presentations/concur16.pdf">slides</a>)<br>
 					<font color="#FF0000">In CONCUR'16, Leibniz International Proceedings in Informatics 59, pages 25:1-25:14. Leibniz-Zentrum für Informatik, 2016.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We propose a categorical framework for bisimulations and unfoldings that unifies the classical approach 
 							from Joyal and al. via open maps and unfoldings. This is based on a notion of categories accessible with 
@@ -801,7 +767,7 @@
 					<a href="presentations/icalp15.pdf">slides</a>)<br>
 					<font color="#FF0000">In ICALP'15, LNCS 9135, pages 171-183. Springer, 2015.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We propose a notion of homology for directed algebraic topology, based on so-called natural systems of 
 							abelian groups, and which we call natural homology. As we show, natural homology has many desirable 
@@ -822,7 +788,7 @@
 					<b><font color="#2E64FE">Aczel-Mendler Bisimulations in a Regular Category.</font></b> (<a href="https://arxiv.org/pdf/2303.04442.pdf">pdf</a>)<br>
 					<font color="#FF0000"><a href="https://arxiv.org/abs/2303.04442">arXiv:2303.04442</a>.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							Aczel-Mendler bisimulations are a coalgebraic extension of a variety of 
 							computational relations between systems. 
@@ -852,7 +818,7 @@
 					<font color="#FF0000"><a href="https://arxiv.org/abs/2201.08648">arXiv:2201.08648</a>.</font><br>
 					Extended version of [<a href="#ifac20">11</a>].
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We develop a method to approximate the moments of a discrete-time stochastic polynomial system. 
 							Our method is built upon Carleman linearization with truncation. Specifically, we take a stochastic 
@@ -885,7 +851,7 @@
 					(<a href="https://arxiv.org/pdf/1904.06224.pdf">pdf</a>)<br>
 					<font color="#FF0000">	<a href="https://arxiv.org/abs/1904.06224">arXiv:1904.06224</a>.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							In this paper, we study the decision making of multiple autonomous vehicles at a roundabout. 
 							The behaviours of the vehicles depend on their aggressiveness, which indicates how much they 
@@ -912,7 +878,7 @@
 					(<a href="https://arxiv.org/pdf/1809.09278.pdf">pdf</a>)<br>
 					<font color="#FF0000">	<a href="https://arxiv.org/abs/1809.09278">arXiv:1809.09278</a>.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							We investigate a canonical way of defining bisimilarity of systems when their semantics is given by a 
 							coreflection, typically in a category of transition systems. We use the fact, from Joyal et al., 
@@ -936,7 +902,7 @@
 					<b><font color="#2E64FE">Directed homotopy and homology theories for geometric models of true concurrency.</font></b> (<a href="papers/phd17.pdf">pdf</a>, <a href="presentations/phd17.pdf">slides</a>)<br>
 					<font color="#FF0000">PhD under the supervision of <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a> and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a> at Laboratoire Spécification et Vérification, ENS Paris-Saclay, Cachan, France, 2017.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							Studying a system that evolves with time through its geometry is the main purpose of directed algebraic topology. 
 							This topic emerged in computer science, more particularly in true concurrency, where Pratt introduced the higher 
@@ -969,7 +935,7 @@
 					<b><font color="#2E64FE">Homologie Dirigée.</font></b> (<a href="papers/master14.pdf">pdf</a>, in French)<br>
 					<font color="#FF0000">M2 internship under the supervision of <a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">E. Goubault</a> and <a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a> at Ecole Polytechnique, Palaiseau, France, 2014.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							See my PhD thesis, which is a better and more complete version of this report.
 						<br>
@@ -983,7 +949,7 @@
 					<b><font color="#2E64FE">Application de la topologie algébrique en informatique théorique.</font></b> (<a href="papers/master12.pdf">pdf</a>, in French)<br>
 					<font color="#FF0000">M1 internship under the supervision of <a href="https://hessbellwald-lab.epfl.ch/HessBellwald">K. Hess Bellwald</a> at Ecole Polytechnique Fédérale de Lausanne, Switzerland, 2012.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							The purpose of this report is to describe some constructions by Raussen to represent the homotopy type 
 							of trace spaces of cubical complexes in directed algebraic topology. We then investigate methods to 
@@ -1006,7 +972,7 @@
 					<b><font color="#2E64FE">Décidabilité de la déduction et de l’équivalence statique pour le chiffrement homomorphique.</font></b> (<a href="papers/cs-bachelor11.pdf">pdf</a>, in French)<br>
 					<font color="#FF0000">L3 internship under the supervision of <a href="https://members.loria.fr/VCortier/">V. Cortier</a> at Laboratoire Lorrain de Recherche en Informatique et ses Applications, Nancy, France, 2011.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 							to be written
 						<br>
@@ -1020,7 +986,7 @@
 					<b><font color="#2E64FE">Le modèle de Cucker-Smale: Émergence et formation de structures et de motifs dans les groupes (troupeaux, bancs, colonies, nuées)</font></b> (<a href="papers/maths-bachelor11.pdf">pdf</a>, in French)<br>
 					<font color="#FF0000">L3 internship with C. Eberhart under the supervision of <a href="https://sites.google.com/site/fredppascal/">F. Pascal</a> at Centre de Mathématiques et Leurs Applications, ENS Cachan, France, 2011.</font>
 					</button>
-					<div class="content">
+					<div class="contentCollapsible">
 						<p><b><u>Abstract:</u></b><br>
 						<br>
 						<b><u>Key words:</u></b><br> 
@@ -1029,8 +995,7 @@
 					</div>
 				</li>
 			</ul>
-	<hr>
-	<h2>Some presentations</h2>
+	<h2 id="talks">Some presentations</h2>
 			<ul>
 				<li>
  					<a href="presentations/trs21.pdf">slides</a> for the <a href='https://akihisayamada.github.io/trs54/'>54th TRS meeting</a>
@@ -1084,8 +1049,7 @@
 					<a href="presentations/getco15.pdf">poster</a> for GETCO15
 				</li>
 			</ul>
-			<hr>
-		<h2>Teachings</h2>
+		<h2 id="teachings">Teachings</h2>
 			<h3>SOKENDAI (2019)</h3>
 				I did a guest lecture for the <a href="https://docs.google.com/document/d/1DHGfk5DELDLwl1l3j0Zzyu3QxECdND082mTxFPAZ5Bc/edit#heading=h.3a1kb1gwi0ea">Formal Methods for Cyber-Physical Systems course</a> for SOKENDAI students on Deductive verification of hybrid systems<br>
 				<a href="teachings/sokendai19/slides.pdf">slides</a>, <a href="teachings/sokendai19/Bouncing ball.kyx">KeYmaera model</a>, <a href="teachings/sokendai19/Bouncing ball_ Proof 1.kya">Keymaera proof</a>, <a href="teachings/sokendai19/assignment.pdf">home assignment</a>
@@ -1102,22 +1066,9 @@
 				<a href="teachings/archive_logic.zip">archive of exercises</a>.
 
 
-	<script>
-		var coll = document.getElementsByClassName("collapsible");
-		var i;
-		
-		for (i = 0; i < coll.length; i++) {
-			coll[i].addEventListener("click", function() {
-			this.classList.toggle("active");
-			var content = this.nextElementSibling;
-			if (content.style.maxHeight){
-				content.style.maxHeight = null;
-			} else {
-				content.style.maxHeight = content.scrollHeight + "px";
-			} 
-			});
-		}
-		</script>
+	<script src="scripts/collapsible.js"></script>
+	<script src="scripts/header.js"></script>
+				
 			
 </body>
 </html>
