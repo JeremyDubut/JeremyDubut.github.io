@@ -23,7 +23,7 @@ def select(
 
     # ordering
     if ordering is not None:
-        query = query+"\nORDER BY "+condition
+        query = query+"\nORDER BY "+ordering
 
     return query
 
