@@ -42,3 +42,33 @@ def publicationTitle(
 ) -> ():
 
     f.write("\t\t<div class=\"publicationTitle\">"+title+".</div>\n")
+
+def publicationInfo(
+    f: object,
+    venue: str,
+    journal: str,
+    vol: int,
+    num: int,
+    papnum: int,
+    fpage: int,
+    lpage: int,
+    pub: str,
+    year: int
+) -> ():
+
+    f.write("\t\t<div class=\"publicationInfo\">\n")
+    f.write("\t\t\t")
+    if venue is not None:
+        f.write("In "+venue+", ")
+    if journal is not None:
+        f.write(journal+", ")
+    if vol is not None:
+        if num is not None:
+            f.write(str(vol)+"("+str(num)+"), ")
+        else:
+            f.write(str(vol)+", ")
+    if fpage is not None:
+        if papnum is not None:
+            f.write(str(papnum)+":"+str(fpage)+"-"+str(papnum)+":"+str(lpage)+", ")
+    f.write(pub+", "+str(year)+".\n")
+    f.write("\t\t</div>")

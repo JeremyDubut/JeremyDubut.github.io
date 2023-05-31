@@ -12,7 +12,7 @@ import timeit
 from sqlite3 import connect
 
 from publication_list.src.sql import select, innerJoin
-from publication_list.src.html import publicationItem, publicationAuthors, publicationTitle
+from publication_list.src.html import publicationItem, publicationAuthors, publicationTitle, publicationInfo
 from publication_list.fileManagement import partition
     
 def main() -> ():
@@ -24,7 +24,7 @@ def main() -> ():
         f.write("<ol class=\"publicationList\" reversed>\n")
 
         # Connecting to the database
-        conn = connect("publication_list/papers2.db")
+        conn = connect("publication_list/papers.db")
         cur = conn.cursor()
 
         # Select all the papers
@@ -36,7 +36,7 @@ def main() -> ():
         # joining authors with authorship in a temp table
         join = innerJoin("Authors", "Id", "Authorship", "AuthorId")
 
-        for paperId, title in res:
+        for paperId, title, typ, venue, journal, vol, num, papnum, fpage, lpage, pub, year in res:
 
             # select the authors of the paper, by order
             cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url"]
@@ -49,6 +49,7 @@ def main() -> ():
             publicationItem(f,paperId)
             publicationAuthors(f,resp)
             publicationTitle(f,title)
+            publicationInfo(f,venue,journal,vol,num,papnum,fpage,lpage,pub,year)
 
         f.write("</ol>\n")
 
