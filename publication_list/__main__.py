@@ -12,7 +12,8 @@ import timeit
 from sqlite3 import connect
 
 from publication_list.src.sql import select, innerJoin
-from publication_list.src.html import publicationItem, publicationAuthors, publicationTitle, publicationInfo
+from publication_list.src.html import (publicationItemOpen, publicationItemClose, publicationAuthors,\
+    publicationTitle, publicationInfo)
 from publication_list.fileManagement import partition
     
 def main() -> ():
@@ -46,10 +47,11 @@ def main() -> ():
             log.log(26,f"Query answered with:\n{resp}")
 
             # writing
-            publicationItem(f,paperId)
+            publicationItemOpen(f,paperId)
             publicationAuthors(f,resp)
             publicationTitle(f,title)
             publicationInfo(f,venue,journal,vol,num,papnum,fpage,lpage,pub,year)
+            publicationItemClose(f)
 
         f.write("</ol>\n")
 

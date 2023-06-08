@@ -1,4 +1,4 @@
-def publicationItem(
+def publicationItemOpen(
     f: object,
     paperId: str
 ) -> ():
@@ -70,5 +70,13 @@ def publicationInfo(
     if fpage is not None:
         if papnum is not None:
             f.write(str(papnum)+":"+str(fpage)+"-"+str(papnum)+":"+str(lpage)+", ")
+        else:
+            f.write(str(fpage)+"-"+str(lpage)+", ")
     f.write(pub+", "+str(year)+".\n")
-    f.write("\t\t</div>")
+    f.write("\t\t</div>\n")
+
+def publicationItemClose(
+    f: object
+) -> ():
+        
+    f.write("\t</li>\n")

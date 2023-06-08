@@ -64,7 +64,7 @@ header {
 }
 
 /*For side menu*/
-/* .sidemenu {
+.sideMenuButton {
     font-size: 30px;
     cursor: pointer;
     background-color: #eee;
@@ -77,10 +77,15 @@ header {
     border-bottom-right-radius:10px;
     position: fixed;
 }
-.sidemenu:hover {
+.sideMenuButton:hover {
     background-color: #ccc;
 }
-.contentSidemenu {
+@media screen and (min-width:50em){
+    .sideMenuButton {
+        display: none;
+    }
+}
+/*.contentSidemenu {
     padding: 0px 30px 0px 0px;
     max-height: 0;
     overflow: hidden;
@@ -119,7 +124,9 @@ header {
     z-index: 4
 }
 @media screen and (max-width:50em){
-    .chapo{position:static}
+    .chapo h1 {
+        font-size: 1.5em;
+    }
 }
 .chapoMenu {
     background-color: white;
@@ -164,9 +171,8 @@ header {
 .publicationItem {
     background-color: #eee;
     color: black;
-    cursor: pointer;
     padding: 10px;
-    width: 100%;
+    width: 96%;
     border: none;
     text-align: left;
     outline: none;
