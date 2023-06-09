@@ -23,7 +23,7 @@ header {
     margin-left:-8px;
 }
 /*For collapsible paper information*/
-.collapsible {
+/* .collapsible {
     background-color: #eee;
     color: black;
     cursor: pointer;
@@ -61,7 +61,7 @@ header {
 }
 .activeCollapsible:after {
     content: url("collapse.png");
-}
+} */
 
 /*For side menu*/
 .sideMenuButton {
@@ -75,7 +75,11 @@ header {
     border-top-right-radius:10px;
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
-    position: fixed;
+    position: absolute;
+    left: 0;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
 }
 .sideMenuButton:hover {
     background-color: #ccc;
@@ -114,6 +118,7 @@ header {
     border-bottom: 1px solid #00000045;
 } */
 
+/*Chapo*/
 .chapo {
     background-color: white;
     display: block;
@@ -164,6 +169,8 @@ header {
     color: black;
     text-decoration: none;
 }
+
+/*Publications*/
 .publicationList {
     list-style-position: inside;
     /* padding:20px; */
@@ -181,6 +188,7 @@ header {
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }
 .publicationItem:not(:last-child) {
     margin-bottom: 5px;
@@ -200,7 +208,52 @@ li .publicationAuthors {
 li .publicationInfo {
     position: relative;
     left: 20px;
+    margin-right: 50px;
 }
 .publicationInfo {
     color: #FF0000;
+}
+
+/*Collapsible*/
+.collapsible{
+    position: relative;
+}
+.collapsibleButton {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: slateblue;
+    color: #eee;
+    padding: 1px 10px 1px 10px;
+    border: none;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    position: absolute;
+    top: -25px;
+    right: 0px;
+}
+/* @media screen and (max-width:50em){
+    .collapsibleButton{top: 45px}
+} */
+.collapsibleButton:hover {
+    background-color: rgb(71, 64, 119);
+}
+.collapsibleContent {
+    padding: 0px 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #ccc;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    
+    /* position: relative;
+    top: 40px; */
+}
+.collapsibleContentTitle {
+    text-decoration-line: underline;
+    font-weight: bold;
 }

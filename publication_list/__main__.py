@@ -13,8 +13,9 @@ from sqlite3 import connect
 
 from publication_list.src.sql import select, innerJoin
 from publication_list.src.html import (publicationItemOpen, publicationItemClose, publicationAuthors,\
-    publicationTitle, publicationInfo)
-from publication_list.fileManagement import partition
+    publicationTitle, publicationInfo, publicationCollapsibleButton, publicationCollapsibleContent, \
+    publicationCollapsibleOpen, publicationCollapsibleClose)
+from publication_list.src.fileManagement import partition
     
 def main() -> ():
 
@@ -37,7 +38,7 @@ def main() -> ():
         # joining authors with authorship in a temp table
         join = innerJoin("Authors", "Id", "Authorship", "AuthorId")
 
-        for paperId, title, typ, venue, journal, vol, num, papnum, fpage, lpage, pub, year in res:
+        for paperId, title, typ, venue, journal, vol, num, papnum, fpage, lpage, pub, year, abstract in res:
 
             # select the authors of the paper, by order
             cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url"]
@@ -51,6 +52,10 @@ def main() -> ():
             publicationAuthors(f,resp)
             publicationTitle(f,title)
             publicationInfo(f,venue,journal,vol,num,papnum,fpage,lpage,pub,year)
+            publicationCollapsibleOpen(f)
+            publicationCollapsibleButton(f)
+            publicationCollapsibleContent(f, abstract)
+            publicationCollapsibleClose(f)
             publicationItemClose(f)
 
         f.write("</ol>\n")
