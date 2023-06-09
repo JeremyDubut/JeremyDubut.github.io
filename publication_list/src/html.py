@@ -111,7 +111,10 @@ def publicationCollapsibleContent(
     splitText(f,abstract)
     f.write("\t\t\t\t<br><br>\n")
     f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Key words:</div>\n")
-    f.write("\t\t\t\tPlaceholder\n")
+    f.write("\t\t\t\tTo be done\n")
+    f.write("\t\t\t\t<br><br>\n")
+    f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Links:</div>\n")
+    f.write("\t\t\t\tTo be done\n")
     f.write("\t\t\t</div>\n")
 
 def publicationCollapsibleOpen(

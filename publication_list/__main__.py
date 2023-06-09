@@ -38,7 +38,7 @@ def main() -> ():
         # joining authors with authorship in a temp table
         join = innerJoin("Authors", "Id", "Authorship", "AuthorId")
 
-        for paperId, title, typ, venue, journal, vol, num, papnum, fpage, lpage, pub, year, abstract in res:
+        for paperId, title, typ, venue, journal, vol, num, papnum, fpage, lpage, pub, year, abstract, keywords in res:
 
             # select the authors of the paper, by order
             cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url"]
@@ -54,7 +54,7 @@ def main() -> ():
             publicationInfo(f,venue,journal,vol,num,papnum,fpage,lpage,pub,year)
             publicationCollapsibleOpen(f)
             publicationCollapsibleButton(f)
-            publicationCollapsibleContent(f, abstract)
+            publicationCollapsibleContent(f, abstract, keywords)
             publicationCollapsibleClose(f)
             publicationItemClose(f)
 

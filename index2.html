@@ -43,13 +43,13 @@
 				<li class="chapoMenuItem"><a href="#teachings">Teachings</a></li>
 			</ul>
 		</nav>
-		<div id="mySidenav" class="sidenav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<nav id="sideMenu" class="sideMenu">
+			<a href="javascript:void(0)" class="sideMenuButtonClose" onclick="closeMenu()">&#12294;</a>
 			<a href="#">Home</a>
 			<a href="#publis">Publications</a>
 			<a href="#talks">Talks</a>
 			<a href="#teachings">Teachings</a>
-		</div>
+		</nav>
 	</header>
 	<div id="main">
 	<h2>General information</h2>
@@ -108,6 +108,118 @@
 	<!-- tag for action -->
 
 <ol class="publicationList" reversed>
+	<li class="publicationItem" id=5>
+		<span class="publicationAuthors">
+			J. Dubut,
+			<a href="https://group-mmm.org/~s-katsumata/index-e.html">S. Katsumata</a>, and
+			<a href="https://group-mmm.org/~ichiro/">I. Hasuo</a>.<br>
+		</span>
+		<div class="publicationTitle">Path Category For Free: Open Morphisms From Coalgebras With Non-Deterministic Branching.</div>
+		<div class="publicationInfo">
+			In FoSSaCS'19, LNCS, 11425, 523-540, Springer, 2019.
+		</div>
+		<div class="collapsible">
+			<button class="collapsibleButton">
+				&#10507;
+			</button>
+			<div class="collapsibleContent">
+				<div class="collapsibleContentTitle">Abstract:</div>
+				There are different categorical approaches to variations of transition systems
+				and their bisimulations. One is coalgebra for a functor G, where a bisimulation
+				is defined as a span of G-coalgebra homomorphism. Another one is in terms of
+				path categories and open morphisms, where a bisimulation is defined as a span
+				of open morphisms. This similarity is no coincidence: given a functor G,
+				fulfilling certain conditions, we derive a path-category for pointed
+				G-coalgebras and lax homomorphisms, such that the open morphisms turn out to be
+				precisely the G-coalgebra homomorphisms. The above construction provides
+				path-categories and trace semantics for free for different flavours of
+				transition systems: (1) non-deterministic tree automata (2) regular
+				nondeterministic nominal automata (RNNA), an expressive automata notion living
+				in nominal sets (3) multisorted transition systems. This last instance relates
+				to Lasota's construction, which is in the converse direction. 
+				<br><br>
+				<div class="collapsibleContentTitle">Key words:</div>
+				coalgebra,  open maps,  Categories,  nominal sets
+				<br><br>
+				<div class="collapsibleContentTitle">Links:</div>
+				To be done
+			</div>
+		</div>
+	</li>
+	<li class="publicationItem" id=4>
+		<span class="publicationAuthors">
+			<a href="http://davidsprunger.com">D. Sprunger</a>,
+			<a href="https://group-mmm.org/~s-katsumata/index-e.html">S. Katsumata</a>,
+			J. Dubut, and
+			<a href="https://group-mmm.org/~ichiro/">I. Hasuo</a>.<br>
+		</span>
+		<div class="publicationTitle">Fibrational Bisimulations and Quantitative Reasoning.</div>
+		<div class="publicationInfo">
+			In CMCS'18, LNCS, 11202, 190-213, Springer, 2018.
+		</div>
+		<div class="collapsible">
+			<button class="collapsibleButton">
+				&#10507;
+			</button>
+			<div class="collapsibleContent">
+				<div class="collapsibleContentTitle">Abstract:</div>
+				Bisimulation and bisimilarity are fundamental notions in comparing state-based
+				systems. Their extensions to a variety of systems have been actively pursued in
+				recent years, a notable direction being quantitative extensions. In this paper
+				we present an abstract categorical framework for such extended (bi)simulation
+				notions. We use coalgebras as system models and fibrations for organizing
+				predicates — following the seminal work by Hermida and Jacobs — but our focus
+				is on the structural aspect of fibrational frameworks. Specifically we use
+				morphisms of fi- brations as well as canonical liftings of functors via Kan
+				extensions. We apply this categorical framework by deriving some known
+				properties of the Hausdorff pseudometric and approximate bisimulation in
+				control theory. 
+				<br><br>
+				<div class="collapsibleContentTitle">Key words:</div>
+				fibration,  approximate bisimulation,  behavioural metric,  functor lifting
+				<br><br>
+				<div class="collapsibleContentTitle">Links:</div>
+				To be done
+			</div>
+		</div>
+	</li>
+	<li class="publicationItem" id=3>
+		<span class="publicationAuthors">
+			J. Dubut,
+			<a href="http://www.lix.polytechnique.fr/Labo/Eric.Goubault/">É. Goubault</a>, and
+			<a href="http://www.lsv.fr/~goubault/">J. Goubault-Larrecq</a>.<br>
+		</span>
+		<div class="publicationTitle">The Directed Homotopy Hypothesis.</div>
+		<div class="publicationInfo">
+			In CSL'16, LIPICS, 62, 9:1-9:16, Leibniz-Zentrum für Informatik, 2016.
+		</div>
+		<div class="collapsible">
+			<button class="collapsibleButton">
+				&#10507;
+			</button>
+			<div class="collapsibleContent">
+				<div class="collapsibleContentTitle">Abstract:</div>
+				The homotopy hypothesis was originally stated by Grothendieck: topological
+				spaces should be “equivalent” to (weak) ∞-groupoids, which give algebraic
+				representatives of homotopy types. Much later, several authors developed
+				geometrizations of computational models, e.g. for rewriting, distributed
+				systems, (homotopy) type theory etc. But an essential feature in the work set
+				up in concurrency theory, is that time should be considered irreversible,
+				giving rise to the field of directed algebraic topology. Following the path
+				proposed by Porter, we state here a directed homotopy hypothesis: Grandis'
+				directed topological spaces should be “equivalent” to a weak form of
+				topologically enriched categories, still very close to (∞,1)-categories. We
+				develop, as in ordinary algebraic topology, a directed homotopy equivalence and
+				a weak equivalence, and show invariance of a form of directed homology.
+				<br><br>
+				<div class="collapsibleContentTitle">Key words:</div>
+				directed algebraic topology,  partially enriched categories,  homotopy hypothesis,  geometric models for concurrency,  higher category theory
+				<br><br>
+				<div class="collapsibleContentTitle">Links:</div>
+				To be done
+			</div>
+		</div>
+	</li>
 	<li class="publicationItem" id=2>
 		<span class="publicationAuthors">
 			J. Dubut,
@@ -138,10 +250,13 @@
 				unique lifting property with respect to path shapes. As an application, we
 				prove that the universal covering of a groupoid, a standard construction in
 				algebraic topology, is an unfolding, when the category of path shapes is well
-				chosen.
+				chosen. 
 				<br><br>
 				<div class="collapsibleContentTitle">Key words:</div>
-				Placeholder
+				categorical models,  bisimulation,  coreflections,  unfolding,  universal covering
+				<br><br>
+				<div class="collapsibleContentTitle">Links:</div>
+				To be done
 			</div>
 		</div>
 	</li>
@@ -165,10 +280,13 @@
 				so-called natural systems of abelian groups, and which we call natural
 				homology. As we show, natural homology has many desirable properties: it is
 				invariant under isomorphisms of directed spaces, it is invariant under
-				refinement (subdivision), and it is computable on cubical complexes.
+				refinement (subdivision), and it is computable on cubical complexes. 
 				<br><br>
 				<div class="collapsibleContentTitle">Key words:</div>
-				Placeholder
+				directed algebraic topology,  homology,  path space,  geometric semantics,  persistent homology,  natural system
+				<br><br>
+				<div class="collapsibleContentTitle">Links:</div>
+				To be done
 			</div>
 		</div>
 	</li>

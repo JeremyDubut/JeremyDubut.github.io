@@ -9,14 +9,14 @@ for (i = 0; i < coll.length; i++) {
             content.style.maxHeight = null;
             setTimeout(() => {  
                 content.style.marginTop = "0px";
-                this.style.top = "-25px";
+                this.style.top = "-18px";
                 content.style.padding = "0px 18px";
             }, 200);
         } else {
             this.innerHTML = "&#10506;"
             content.style.maxHeight = content.scrollHeight + "px";
             content.style.marginTop = "10px";
-            this.style.top = "-35px";
+            this.style.top = "-28px";
             content.style.padding = "5px 18px";
         }
     }

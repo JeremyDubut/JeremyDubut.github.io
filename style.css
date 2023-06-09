@@ -22,46 +22,6 @@ header {
     margin-right:-8px;
     margin-left:-8px;
 }
-/*For collapsible paper information*/
-/* .collapsible {
-    background-color: #eee;
-    color: black;
-    cursor: pointer;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-}
-.activeCollapsible, .collapsible:hover {
-    background-color: #ccc;
-}
-.contentCollapsible {
-    padding: 0 18px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-}
-.collapsible:after {
-    content: url("expand.png"); 
-    font-size: 13px;
-    color: white;
-    float: right;
-    margin-left: 5px;
-}
-.activeCollapsible:after {
-    content: url("collapse.png");
-} */
 
 /*For side menu*/
 .sideMenuButton {
@@ -77,9 +37,6 @@ header {
     border-bottom-right-radius:10px;
     position: absolute;
     left: 0;
-    /* position: fixed;
-    top: 0;
-    left: 0; */
 }
 .sideMenuButton:hover {
     background-color: #ccc;
@@ -89,19 +46,19 @@ header {
         display: none;
     }
 }
-.sidenav {
-    height: 100%; /* 100% Full-height*/
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+.sideMenu {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
     left: 0;
-    background-color: #eee; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
+    background-color: #eee; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.2s; 
 }
-.sidenav a {
+.sideMenu a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -109,10 +66,10 @@ header {
     transition: 0.3s;
     color: slateblue;
 }
-.sidenav a:hover {
+.sideMenu a:hover {
     background-color: #ccc;
 }
-.sidenav .closebtn {
+.sideMenu .sideMenuButtonClose {
     position: absolute;
     top: 0;
     right: 25px;
@@ -122,34 +79,6 @@ header {
     cursor: pointer;
     color: #aaa;
 }
-/*.contentSidemenu {
-    padding: 0px 30px 0px 0px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: #ccc;
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
-    position: fixed;
-    font-size: 30px;
-}
-.contentSidemenu a {
-    color: black;
-    text-decoration: none;
-    line-height: 1.25em;
-    display: block;
-    padding: 1.25ex 0.5em 1.25ex 0.75em;
-} */
-
-/*For the chapo*/
-/* .chapo {
-    background-color: #eee;
-    position: fixed;
-    width: 100%;
-    border-bottom: 1px solid #00000045;
-} */
 
 /*Chapo*/
 .chapo {
@@ -226,24 +155,22 @@ header {
 .publicationItem:not(:last-child) {
     margin-bottom: 5px;
 }
-.publicationTitle{
-    font-weight: bold;
-    color: #2E64FE;
-}
 li .publicationTitle {
     position: relative;
     left: 20px;
+    width: 96%;
+    font-weight: bold;
+    color: #2E64FE;
 }
 li .publicationAuthors {
     position: relative;
     left: 4px;
+    width: 96%;
 }
 li .publicationInfo {
     position: relative;
     left: 20px;
     margin-right: 50px;
-}
-.publicationInfo {
     color: #FF0000;
 }
 
@@ -252,34 +179,31 @@ li .publicationInfo {
     position: relative;
 }
 .collapsibleButton {
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
     background-color: slateblue;
     color: #eee;
-    padding: 1px 10px 1px 10px;
+    padding: 1px 8px 1px 8px;
     border: none;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
     position: absolute;
-    top: -25px;
+    top: -18px;
     right: 0px;
 }
 .dummyButton {
-    font-size: 20px;
+    font-size: 15px;
     background-color: slateblue;
     color: #eee;
-    padding: 1px 10px 1px 10px;
+    padding: 1px 8px 1px 8px;
     border: none;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
 }
-/* @media screen and (max-width:50em){
-    .collapsibleButton{top: 45px}
-} */
 .collapsibleButton:hover {
     background-color: rgb(71, 64, 119);
 }
@@ -293,9 +217,6 @@ li .publicationInfo {
     border-top-right-radius:10px;
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
-    
-    /* position: relative;
-    top: 40px; */
 }
 .collapsibleContentTitle {
     text-decoration-line: underline;
