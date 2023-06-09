@@ -9,7 +9,7 @@ h2 {
     scroll-margin-top: 10rem;
 }
 @media screen and (max-width:50em){
-    h2{scroll-margin-top: 1rem}
+    h2{scroll-margin-top: 5rem}
 }
 h3 {text-align:center;}
 <!-- 		@media (prefers-color-scheme: dark) {
@@ -88,6 +88,39 @@ header {
     .sideMenuButton {
         display: none;
     }
+}
+.sidenav {
+    height: 100%; /* 100% Full-height*/
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #eee; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    color: slateblue;
+}
+.sidenav a:hover {
+    background-color: #ccc;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    padding: 1px 15px 3px 15px;
+    cursor: pointer;
+    color: #aaa;
 }
 /*.contentSidemenu {
     padding: 0px 30px 0px 0px;
@@ -232,6 +265,17 @@ li .publicationInfo {
     position: absolute;
     top: -25px;
     right: 0px;
+}
+.dummyButton {
+    font-size: 20px;
+    background-color: slateblue;
+    color: #eee;
+    padding: 1px 10px 1px 10px;
+    border: none;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
 }
 /* @media screen and (max-width:50em){
     .collapsibleButton{top: 45px}

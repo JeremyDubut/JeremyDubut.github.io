@@ -1,3 +1,14 @@
+def splitText(
+    f: object,
+    abstract: str,
+) -> ():
+
+    if not abstract == "":
+        pref = abstract[:80].rpartition(" ")[0]
+        f.write("\t\t\t\t"+pref+"\n")
+        splitText(f,abstract[len(pref)+1:])
+
+
 def publicationItemOpen(
     f: object,
     paperId: str
@@ -80,3 +91,37 @@ def publicationItemClose(
 ) -> ():
         
     f.write("\t</li>\n")
+
+def publicationCollapsibleButton(
+    f: object
+) -> ():
+
+    f.write("\t\t\t<button class=\"collapsibleButton\">\n")
+    f.write("\t\t\t\t&#10507;\n")
+    f.write("\t\t\t</button>\n")
+
+def publicationCollapsibleContent(
+    f: object,
+    abstract: str
+) -> ():
+
+    f.write("\t\t\t<div class=\"collapsibleContent\">\n")
+    f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Abstract:</div>\n")
+    # f.write("\t\t\t\t"+abstract+"<br><br>\n")
+    splitText(f,abstract)
+    f.write("\t\t\t\t<br><br>\n")
+    f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Key words:</div>\n")
+    f.write("\t\t\t\tPlaceholder\n")
+    f.write("\t\t\t</div>\n")
+
+def publicationCollapsibleOpen(
+    f: object
+) -> ():
+
+    f.write("\t\t<div class=\"collapsible\">\n")
+
+def publicationCollapsibleClose(
+    f: object
+) -> ():
+
+    f.write("\t\t</div>\n")

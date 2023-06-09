@@ -16,7 +16,6 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
 	<title>Jérémy Dubut's webpage</title>
-	<!-- <script src="scripts/sidemenu.js"></script> -->
 </head>
 <body>
 	<!-- <button class="sidemenu" id="sideMenu" onclick="openMenu()">
@@ -32,10 +31,10 @@
 		</p>
 	</div> -->
 	<header class="chapo" id="header">
-		<button class="sideMenuButton" id="sideMenuButton">
+		<button class="sideMenuButton" id="sideMenuButton" onclick="openMenu()">
 			&#9781;
 		</button>
-		<h1> Jérémy Dubut-Kross<br>(デュブ黒須・ジェレミー)</h1>
+		<h1 id="mainTitle"> Jérémy Dubut-Kross<br>(デュブ黒須・ジェレミー)</h1>
 		<nav class="chapoMenu">
 			<ul class="chapoMenuList">
 				<li class="chapoMenuItem"><a href="#">Home</a></li>
@@ -44,7 +43,15 @@
 				<li class="chapoMenuItem"><a href="#teachings">Teachings</a></li>
 			</ul>
 		</nav>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">Home</a>
+			<a href="#publis">Publications</a>
+			<a href="#talks">Talks</a>
+			<a href="#teachings">Teachings</a>
+		</div>
 	</header>
+	<div id="main">
 	<h2>General information</h2>
 		<p>I am a researcher in the <a href="https://www.cpsec.aist.go.jp/team/ipsrt/index_en.html">Infrastructure Protection Security Research Team</a>
 			at the <a href="https://www.cpsec.aist.go.jp/index_en.html">Cyber Physical Security Research Center</a>
@@ -94,7 +101,9 @@
 			<li>proof assistants</li>
 		</ul>
 
-	<h2 id="publis">Publications test</h2>
+	<h2 id="publis">Publications</h2>
+
+	Click on <button class="dummyButton">&#10507;</button> to unfold more information.
 
 	<!-- tag for action -->
 
@@ -115,7 +124,22 @@
 			</button>
 			<div class="collapsibleContent">
 				<div class="collapsibleContentTitle">Abstract:</div>
-				We propose a categorical framework for bisimulations and unfoldings that unifies the classical approach from Joyal and al. via open maps and unfoldings. This is based on a notion of categories accessible with respect to a subcategory of path shapes, i.e., for which one can define a nice notion of trees as glueings of paths. We show that transition systems and presheaf models are instances of our framework. We also prove that in our framework, several notions of bisimulation coincide, in particular an “operational one” akin to the standard definition in transition systems. Also, our notion of accessibility is preserved by coreflections. This also leads us to a notion of unfolding that behaves well in the accessible case: it is a right adjoint and is a universal covering, i.e., it is initial among the morphisms that have the unique lifting property with respect to path shapes. As an application, we prove that the universal covering of a groupoid, a standard construction in algebraic topology, is an unfolding, when the category of path shapes is well chosen. <br><br>
+				We propose a categorical framework for bisimulations and unfoldings that
+				unifies the classical approach from Joyal and al. via open maps and unfoldings.
+				This is based on a notion of categories accessible with respect to a
+				subcategory of path shapes, i.e., for which one can define a nice notion of
+				trees as glueings of paths. We show that transition systems and presheaf models
+				are instances of our framework. We also prove that in our framework, several
+				notions of bisimulation coincide, in particular an “operational one” akin to
+				the standard definition in transition systems. Also, our notion of
+				accessibility is preserved by coreflections. This also leads us to a notion of
+				unfolding that behaves well in the accessible case: it is a right adjoint and
+				is a universal covering, i.e., it is initial among the morphisms that have the
+				unique lifting property with respect to path shapes. As an application, we
+				prove that the universal covering of a groupoid, a standard construction in
+				algebraic topology, is an unfolding, when the category of path shapes is well
+				chosen.
+				<br><br>
 				<div class="collapsibleContentTitle">Key words:</div>
 				Placeholder
 			</div>
@@ -137,7 +161,12 @@
 			</button>
 			<div class="collapsibleContent">
 				<div class="collapsibleContentTitle">Abstract:</div>
-				We propose a notion of homology for directed algebraic topology, based on so-called natural systems of abelian groups, and which we call natural homology. As we show, natural homology has many desirable properties: it is invariant under isomorphisms of directed spaces, it is invariant under refinement (subdivision), and it is computable on cubical complexes. <br><br>
+				We propose a notion of homology for directed algebraic topology, based on
+				so-called natural systems of abelian groups, and which we call natural
+				homology. As we show, natural homology has many desirable properties: it is
+				invariant under isomorphisms of directed spaces, it is invariant under
+				refinement (subdivision), and it is computable on cubical complexes.
+				<br><br>
 				<div class="collapsibleContentTitle">Key words:</div>
 				Placeholder
 			</div>
@@ -218,9 +247,12 @@
 				<a href="teachings/archive_logic.zip">archive of exercises</a>.
 
 
+
+
 	<script src="scripts/collapsible.js"></script>
 	<script src="scripts/header.js"></script>
-	<script src="scripts/publication.js">includeHTML();</script>
+	<script src="scripts/sidemenu.js"></script>
+</div>
 				
 			
 </body>
