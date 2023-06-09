@@ -3,11 +3,13 @@ def splitText(
     abstract: str,
 ) -> ():
 
-    if not abstract == "":
-        pref = abstract[:80].rpartition(" ")[0]
+    if not (abstract == "" or abstract == " "):
+        if len(abstract) > 80:
+            pref = abstract[:80].rpartition(" ")[0]
+        else:
+            pref = abstract
         f.write("\t\t\t\t"+pref+"\n")
         splitText(f,abstract[len(pref)+1:])
-
 
 def publicationItemOpen(
     f: object,
@@ -102,7 +104,9 @@ def publicationCollapsibleButton(
 
 def publicationCollapsibleContent(
     f: object,
-    abstract: str
+    abstract: str,
+    keywords: str,
+    links: list[tuple[str]]
 ) -> ():
 
     f.write("\t\t\t<div class=\"collapsibleContent\">\n")
@@ -111,10 +115,15 @@ def publicationCollapsibleContent(
     splitText(f,abstract)
     f.write("\t\t\t\t<br><br>\n")
     f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Key words:</div>\n")
-    f.write("\t\t\t\tTo be done\n")
+    f.write("\t\t\t\t"+keywords+"\n")
     f.write("\t\t\t\t<br><br>\n")
-    f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Links:</div>\n")
-    f.write("\t\t\t\tTo be done\n")
+    if not len(links) == 0:
+        f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Links:</div>\n")
+        f.write("\t\t\t\t<ul class=\"linksList\">\n")
+        # f.write("\t\t\t\tTo be done\n")
+        for caption, url in links:
+            f.write("\t\t\t\t\t<li class=\"linksItem\"><a href="+url+">"+caption+"</a></li>\n")
+        f.write("\t\t\t\t</ul>\n")
     f.write("\t\t\t</div>\n")
 
 def publicationCollapsibleOpen(

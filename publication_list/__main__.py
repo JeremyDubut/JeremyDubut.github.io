@@ -42,10 +42,16 @@ def main() -> ():
 
             # select the authors of the paper, by order
             cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url"]
-            sel = select(cols, join, "Authorship.PaperId="+str(paperId),"Authorship.AuthorOrder ASC")
+            sel = select(cols, join, condition="Authorship.PaperId="+str(paperId), ordering="Authorship.AuthorOrder ASC")
             log.log(25,"\n"+sel)
             resp = cur.execute(sel).fetchall()
             log.log(26,f"Query answered with:\n{resp}")
+
+            # select the links
+            sel = select(["Links.Caption","Links.Url"], "Links", condition="Links.PaperId="+str(paperId))
+            log.log(25,"\n"+sel)
+            links = cur.execute(sel).fetchall()
+            log.log(26,f"Query answered with:\n{links}")
 
             # writing
             publicationItemOpen(f,paperId)
@@ -54,7 +60,7 @@ def main() -> ():
             publicationInfo(f,venue,journal,vol,num,papnum,fpage,lpage,pub,year)
             publicationCollapsibleOpen(f)
             publicationCollapsibleButton(f)
-            publicationCollapsibleContent(f, abstract, keywords)
+            publicationCollapsibleContent(f, abstract, keywords, links)
             publicationCollapsibleClose(f)
             publicationItemClose(f)
 
