@@ -116,8 +116,8 @@ def publicationCollapsibleContent(
     f.write("\t\t\t\t<br><br>\n")
     f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Key words:</div>\n")
     f.write("\t\t\t\t"+keywords+"\n")
-    f.write("\t\t\t\t<br><br>\n")
     if not len(links) == 0:
+        f.write("\t\t\t\t<br><br>\n")
         f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Links:</div>\n")
         f.write("\t\t\t\t<ul class=\"linksList\">\n")
         # f.write("\t\t\t\tTo be done\n")

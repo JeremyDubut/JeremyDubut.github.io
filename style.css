@@ -72,12 +72,19 @@ header {
 .sideMenu .sideMenuButtonClose {
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
+    right: 0;
     margin-left: 50px;
     padding: 1px 15px 3px 15px;
     cursor: pointer;
     color: #aaa;
+    font-size: 30px;
+    background-color: #eee;
+    padding: 1px 15px 3px 15px;
+    border: none;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
 }
 
 /*Chapo*/
@@ -166,6 +173,18 @@ li .publicationAuthors {
     position: relative;
     left: 4px;
     width: 96%;
+}
+.publicationAuthors a {
+    color: black;
+    text-decoration: none;
+    border: none;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.publicationAuthors a:hover {
+    background-color: #aaa;
 }
 li .publicationInfo {
     position: relative;
