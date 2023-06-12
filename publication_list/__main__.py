@@ -40,7 +40,7 @@ def main() -> ():
         for typ, head in pub_typ:
 
             # write header
-            f.write("<h3>"+head+"</h3>\n\n")
+            f.write("\t\t<h3>"+head+"</h3>\n\n")
             publicationListOpen(f,typ)
             # f.write("<ol class=\"publicationList\" reversed>\n")
 

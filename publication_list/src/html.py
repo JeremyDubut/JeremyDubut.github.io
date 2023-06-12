@@ -8,7 +8,7 @@ def splitText(
             pref = abstract[:80].rpartition(" ")[0]
         else:
             pref = abstract
-        f.write("\t\t\t\t"+pref+"\n")
+        f.write("\t\t\t\t\t\t"+pref+"\n")
         splitText(f,abstract[len(pref)+1:])
 
 # assume that there is at most one reference
@@ -30,7 +30,7 @@ def publicationItemOpen(
     typ: str
 ) -> ():
         
-    f.write("\t<li class=\"publicationItem "+typ[1:-1]+"\" id="+str(paperId)+">\n")
+    f.write("\t\t\t<li class=\"publicationItem "+typ[1:-1]+"\" id="+str(paperId)+">\n")
 
 def publicationAuthors(
     f: object,
@@ -38,7 +38,7 @@ def publicationAuthors(
 ) -> ():
 
     if len(authors) > 0:
-        f.write("\t\t<span class=\"publicationAuthors\">\n")
+        f.write("\t\t\t\t<span class=\"publicationAuthors\">\n")
         nb_auth = len(authors)
         for i, author in enumerate(authors):
             if i == 1 and nb_auth == 2:
@@ -50,7 +50,7 @@ def publicationAuthors(
             publicationAuthor(f,author)
             if i == nb_auth - 1:
                 f.write(".<br>\n")
-        f.write("\t\t</span>\n")
+        f.write("\t\t\t\t</span>\n")
 
 def publicationAuthor(
     f: object, 
@@ -59,9 +59,9 @@ def publicationAuthor(
 
     # f.write("\t\t<div class=\"publicationAuthor\" id=\""+author[0]+"\">\n")
     if author[3] is None:
-        f.write("\t\t\t"+author[1][0]+". "+author[2]+"")
+        f.write("\t\t\t\t\t"+author[1][0]+". "+author[2]+"")
     else:
-        f.write("\t\t\t<a href=\""+author[3]+"\">"+author[1][0]+". "+author[2]+"</a>")
+        f.write("\t\t\t\t\t<a href=\""+author[3]+"\">"+author[1][0]+". "+author[2]+"</a>")
 
 
 def publicationTitle(
@@ -69,7 +69,7 @@ def publicationTitle(
     title: str
 ) -> ():
 
-    f.write("\t\t<div class=\"publicationTitle\">"+title+".</div>\n")
+    f.write("\t\t\t\t<div class=\"publicationTitle\">"+title+".</div>\n")
 
 def publicationInfo(
     f: object,
@@ -84,8 +84,8 @@ def publicationInfo(
     year: int
 ) -> ():
 
-    f.write("\t\t<div class=\"publicationInfo\">\n")
-    f.write("\t\t\t")
+    f.write("\t\t\t\t<div class=\"publicationInfo\">\n")
+    f.write("\t\t\t\t\t")
     if venue is not None:
         f.write("In "+venue+", ")
     if journal is not None:
@@ -101,21 +101,21 @@ def publicationInfo(
         else:
             f.write(str(fpage)+"-"+str(lpage)+", ")
     f.write(pub+", "+str(year)+".\n")
-    f.write("\t\t</div>\n")
+    f.write("\t\t\t\t</div>\n")
 
 def publicationItemClose(
     f: object
 ) -> ():
         
-    f.write("\t</li>\n")
+    f.write("\t\t\t</li>\n")
 
 def publicationCollapsibleButton(
     f: object
 ) -> ():
 
-    f.write("\t\t\t<button class=\"collapsibleButton\">\n")
-    f.write("\t\t\t\t&#10507;\n")
-    f.write("\t\t\t</button>\n")
+    f.write("\t\t\t\t\t<button class=\"collapsibleButton\">\n")
+    f.write("\t\t\t\t\t\t&#10507;\n")
+    f.write("\t\t\t\t\t</button>\n")
 
 def publicationCollapsibleContent(
     f: object,
@@ -124,34 +124,34 @@ def publicationCollapsibleContent(
     links: list[tuple[str]]
 ) -> ():
 
-    f.write("\t\t\t<div class=\"collapsibleContent\">\n")
-    f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Abstract:</div>\n")
+    f.write("\t\t\t\t\t<div class=\"collapsibleContent\">\n")
+    f.write("\t\t\t\t\t\t<div class=\"collapsibleContentTitle\">Abstract:</div>\n")
     # f.write("\t\t\t\t"+abstract+"<br><br>\n")
     splitText(f,abstract)
-    f.write("\t\t\t\t<br><br>\n")
-    f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Key words:</div>\n")
-    f.write("\t\t\t\t"+keywords+"\n")
+    f.write("\t\t\t\t\t\t<br><br>\n")
+    f.write("\t\t\t\t\t\t<div class=\"collapsibleContentTitle\">Key words:</div>\n")
+    f.write("\t\t\t\t\t\t"+keywords+"\n")
     if not len(links) == 0:
-        f.write("\t\t\t\t<br><br>\n")
-        f.write("\t\t\t\t<div class=\"collapsibleContentTitle\">Links:</div>\n")
-        f.write("\t\t\t\t<ul class=\"linksList\">\n")
+        f.write("\t\t\t\t\t\t<br><br>\n")
+        f.write("\t\t\t\t\t\t<div class=\"collapsibleContentTitle\">Links:</div>\n")
+        f.write("\t\t\t\t\t\t<ul class=\"linksList\">\n")
         # f.write("\t\t\t\tTo be done\n")
         for caption, url in links:
-            f.write("\t\t\t\t\t<li class=\"linksItem\"><a href="+url+">"+caption+"</a></li>\n")
-        f.write("\t\t\t\t</ul>\n")
-    f.write("\t\t\t</div>\n")
+            f.write("\t\t\t\t\t\t\t<li class=\"linksItem\"><a href="+url+">"+caption+"</a></li>\n")
+        f.write("\t\t\t\t\t\t</ul>\n")
+    f.write("\t\t\t\t\t</div>\n")
 
 def publicationCollapsibleOpen(
     f: object
 ) -> ():
 
-    f.write("\t\t<div class=\"collapsible\">\n")
+    f.write("\t\t\t\t<div class=\"collapsible\">\n")
 
 def publicationCollapsibleClose(
     f: object
 ) -> ():
 
-    f.write("\t\t</div>\n")
+    f.write("\t\t\t\t</div>\n")
 
 def publicationListClose(
     f: object,
@@ -159,9 +159,9 @@ def publicationListClose(
 ) -> ():
 
     if typ == "\"conference\"" or typ == "\"journaly\"":
-        f.write("</ol>\n\n")
+        f.write("\t\t</ol>\n\n")
     else:
-        f.write("</ul>\n\n")
+        f.write("\t\t</ul>\n\n")
 
 def publicationListOpen(
     f: object,
@@ -169,11 +169,11 @@ def publicationListOpen(
 ) -> ():
 
     if typ == "\"conference\"":
-        f.write("<ol class=\"publicationList\" reversed>\n")
+        f.write("\t\t<ol class=\"publicationList\" reversed>\n")
     elif typ == "\"journaly\"":
-        f.write("<ol type=I class=\"publicationList\" reversed>\n")
+        f.write("\t\t<ol type=I class=\"publicationList\" reversed>\n")
     else:
-        f.write("<ul style=\"list-style: none;\" class=\"publicationList\">\n")
+        f.write("\t\t<ul style=\"list-style: none;\" class=\"publicationList\">\n")
 
 def publicationComment(
     f: object,
@@ -181,4 +181,4 @@ def publicationComment(
 ) -> ():
 
     if comment is not None:
-        f.write("\t\t<div class=\"publicationComment\">"+placeholder(comment)+".</div>\n")
+        f.write("\t\t\t\t<div class=\"publicationComment\">"+placeholder(comment)+".</div>\n")
