@@ -11,31 +11,46 @@ def splitText(
         f.write("\t\t\t\t"+pref+"\n")
         splitText(f,abstract[len(pref)+1:])
 
+# assume that there is at most one reference
+# of the form [%id]
+def placeholder(
+    com: str
+) -> str:
+
+    if "%" in com:
+        pref, _, suff = com.partition("%")
+        iden, _, suff = suff.partition("]")
+        return pref+"<a href=#"+iden+" class=\"placeholder\">0</a>]"+suff
+    else:
+        return com
+
 def publicationItemOpen(
     f: object,
-    paperId: str
+    paperId: str,
+    typ: str
 ) -> ():
         
-    f.write("\t<li class=\"publicationItem\" id="+str(paperId)+">\n")
+    f.write("\t<li class=\"publicationItem "+typ[1:-1]+"\" id="+str(paperId)+">\n")
 
 def publicationAuthors(
     f: object,
     authors: list[tuple[str]]
 ) -> ():
 
-    f.write("\t\t<span class=\"publicationAuthors\">\n")
-    nb_auth = len(authors)
-    for i, author in enumerate(authors):
-        if i == 1 and nb_auth == 2:
-            f.write(" and\n")
-        elif i == nb_auth - 1 and not i == 0:
-            f.write(", and\n")
-        elif not i == 0:
-            f.write(",\n")
-        publicationAuthor(f,author)
-        if i == nb_auth - 1:
-            f.write(".<br>\n")
-    f.write("\t\t</span>\n")
+    if len(authors) > 0:
+        f.write("\t\t<span class=\"publicationAuthors\">\n")
+        nb_auth = len(authors)
+        for i, author in enumerate(authors):
+            if i == 1 and nb_auth == 2:
+                f.write(" and\n")
+            elif i == nb_auth - 1 and not i == 0:
+                f.write(", and\n")
+            elif not i == 0:
+                f.write(",\n")
+            publicationAuthor(f,author)
+            if i == nb_auth - 1:
+                f.write(".<br>\n")
+        f.write("\t\t</span>\n")
 
 def publicationAuthor(
     f: object, 
@@ -158,4 +173,12 @@ def publicationListOpen(
     elif typ == "\"journaly\"":
         f.write("<ol type=I class=\"publicationList\" reversed>\n")
     else:
-        f.write("<ul class=\"publicationList\">\n")
+        f.write("<ul style=\"list-style: none;\" class=\"publicationList\">\n")
+
+def publicationComment(
+    f: object,
+    comment: str
+) -> ():
+
+    if comment is not None:
+        f.write("\t\t<div class=\"publicationComment\">"+placeholder(comment)+".</div>\n")

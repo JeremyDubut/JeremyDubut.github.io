@@ -14,7 +14,8 @@ from sqlite3 import connect
 from publication_list.src.sql import select, innerJoin
 from publication_list.src.html import (publicationItemOpen, publicationItemClose, publicationAuthors,\
     publicationTitle, publicationInfo, publicationCollapsibleButton, publicationCollapsibleContent, \
-    publicationCollapsibleOpen, publicationCollapsibleClose, publicationListOpen, publicationListClose)
+    publicationCollapsibleOpen, publicationCollapsibleClose, publicationListOpen, publicationListClose, \
+    publicationComment)
 from publication_list.src.fileManagement import partition
     
 def main() -> ():
@@ -52,7 +53,7 @@ def main() -> ():
             # joining authors with authorship in a temp table
             join = innerJoin("Authors", "Id", "Authorship", "AuthorId")
 
-            for paperId, title, _, venue, journal, vol, num, papnum, fpage, lpage, pub, year, abstract, keywords in res:
+            for paperId, title, _, venue, journal, vol, num, papnum, fpage, lpage, pub, year, abstract, keywords, comment in res:
 
                 # select the authors of the paper, by order
                 cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url"]
@@ -68,10 +69,11 @@ def main() -> ():
                 log.log(26,f"Query answered with:\n{links}")
 
                 # writing
-                publicationItemOpen(f,paperId)
+                publicationItemOpen(f,paperId,typ)
                 publicationAuthors(f,resp)
                 publicationTitle(f,title)
                 publicationInfo(f,venue,journal,vol,num,papnum,fpage,lpage,pub,year)
+                publicationComment(f,comment)
                 publicationCollapsibleOpen(f)
                 publicationCollapsibleButton(f)
                 publicationCollapsibleContent(f, abstract, keywords, links)
@@ -95,6 +97,7 @@ def main() -> ():
             f.write(l)
         f.close()
         conn.close()
+        log.info("Finishing process without error.")
 
 
 if __name__ == "__main__":

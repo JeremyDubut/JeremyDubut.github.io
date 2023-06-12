@@ -7,9 +7,6 @@ h2 {
     background-color:SlateBlue;
     color: #eee;
     scroll-margin-top: 10rem;
-    /* width: 90%;
-    font-size: 20px;
-    align-self: center; */
 }
 @media screen and (max-width:50em){
     h2{scroll-margin-top: 5rem}
@@ -162,6 +159,10 @@ header {
     border-bottom-right-radius:10px;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
+    scroll-margin-top: 10rem;
+}
+@media screen and (max-width:50em){
+    .publicationItem{scroll-margin-top: 5rem}
 }
 .publicationItem::marker {
     color: slateblue;
