@@ -14,7 +14,7 @@ from sqlite3 import connect
 from publication_list.src.sql import select, innerJoin
 from publication_list.src.html import (publicationItemOpen, publicationItemClose, publicationAuthors,\
     publicationTitle, publicationInfo, publicationCollapsibleButton, publicationCollapsibleContent, \
-    publicationCollapsibleOpen, publicationCollapsibleClose)
+    publicationCollapsibleOpen, publicationCollapsibleClose, publicationListOpen, publicationListClose)
 from publication_list.src.fileManagement import partition
     
 def main() -> ():
@@ -23,48 +23,63 @@ def main() -> ():
 
         # Preparing the html file
         (f,postfix) = partition("index2.html")
-        f.write("<ol class=\"publicationList\" reversed>\n")
 
         # Connecting to the database
         conn = connect("publication_list/papers.db")
         cur = conn.cursor()
 
-        # Select all the papers
-        sel = select([],"Papers",ordering="Papers.Id DESC")
-        log.log(25,"\n"+sel)
-        res = cur.execute(sel).fetchall()
-        log.log(26,f"Query answered with:\n{res}")
+        # list of types of publications
+        pub_typ = [
+            ("\"journaly\"", "Journals"), 
+            ("\"conference\"","Conferences"), 
+            ("\"preprint\"","Preprints"), 
+            ("\"thesis\"","Theses")
+        ]
 
-        # joining authors with authorship in a temp table
-        join = innerJoin("Authors", "Id", "Authorship", "AuthorId")
+        for typ, head in pub_typ:
 
-        for paperId, title, typ, venue, journal, vol, num, papnum, fpage, lpage, pub, year, abstract, keywords in res:
+            # write header
+            f.write("<h3>"+head+"</h3>\n\n")
+            publicationListOpen(f,typ)
+            # f.write("<ol class=\"publicationList\" reversed>\n")
 
-            # select the authors of the paper, by order
-            cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url"]
-            sel = select(cols, join, condition="Authorship.PaperId="+str(paperId), ordering="Authorship.AuthorOrder ASC")
+            # Select all the papers
+            sel = select([],"Papers", condition="Papers.Type="+typ, ordering="Papers.Id DESC")
             log.log(25,"\n"+sel)
-            resp = cur.execute(sel).fetchall()
-            log.log(26,f"Query answered with:\n{resp}")
+            res = cur.execute(sel).fetchall()
+            log.log(26,f"Query answered with:\n{res}")
 
-            # select the links
-            sel = select(["Links.Caption","Links.Url"], "Links", condition="Links.PaperId="+str(paperId))
-            log.log(25,"\n"+sel)
-            links = cur.execute(sel).fetchall()
-            log.log(26,f"Query answered with:\n{links}")
+            # joining authors with authorship in a temp table
+            join = innerJoin("Authors", "Id", "Authorship", "AuthorId")
 
-            # writing
-            publicationItemOpen(f,paperId)
-            publicationAuthors(f,resp)
-            publicationTitle(f,title)
-            publicationInfo(f,venue,journal,vol,num,papnum,fpage,lpage,pub,year)
-            publicationCollapsibleOpen(f)
-            publicationCollapsibleButton(f)
-            publicationCollapsibleContent(f, abstract, keywords, links)
-            publicationCollapsibleClose(f)
-            publicationItemClose(f)
+            for paperId, title, _, venue, journal, vol, num, papnum, fpage, lpage, pub, year, abstract, keywords in res:
 
-        f.write("</ol>\n")
+                # select the authors of the paper, by order
+                cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url"]
+                sel = select(cols, join, condition="Authorship.PaperId="+str(paperId), ordering="Authorship.AuthorOrder ASC")
+                log.log(25,"\n"+sel)
+                resp = cur.execute(sel).fetchall()
+                log.log(26,f"Query answered with:\n{resp}")
+
+                # select the links
+                sel = select(["Links.Caption","Links.Url"], "Links", condition="Links.PaperId="+str(paperId))
+                log.log(25,"\n"+sel)
+                links = cur.execute(sel).fetchall()
+                log.log(26,f"Query answered with:\n{links}")
+
+                # writing
+                publicationItemOpen(f,paperId)
+                publicationAuthors(f,resp)
+                publicationTitle(f,title)
+                publicationInfo(f,venue,journal,vol,num,papnum,fpage,lpage,pub,year)
+                publicationCollapsibleOpen(f)
+                publicationCollapsibleButton(f)
+                publicationCollapsibleContent(f, abstract, keywords, links)
+                publicationCollapsibleClose(f)
+                publicationItemClose(f)
+
+            publicationListClose(f,typ)
+            # f.write("</ol>\n\n")
 
     # Making sure the postfix is written up and everyting closed
 

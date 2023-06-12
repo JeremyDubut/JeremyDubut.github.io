@@ -7,6 +7,9 @@ h2 {
     background-color:SlateBlue;
     color: #eee;
     scroll-margin-top: 10rem;
+    /* width: 90%;
+    font-size: 20px;
+    align-self: center; */
 }
 @media screen and (max-width:50em){
     h2{scroll-margin-top: 5rem}
@@ -140,9 +143,10 @@ header {
 }
 
 /*Publications*/
+
 .publicationList {
     list-style-position: inside;
-    /* padding:20px; */
+    padding: 0px;
 }
 .publicationItem {
     background-color: #eee;
@@ -159,19 +163,22 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
 }
+.publicationItem::marker {
+    color: slateblue;
+    font-weight: bold;
+}
 .publicationItem:not(:last-child) {
     margin-bottom: 5px;
 }
 li .publicationTitle {
-    position: relative;
-    left: 20px;
+    /* position: relative;
+    left: 20px; */
     width: 96%;
-    font-weight: bold;
-    color: #2E64FE;
+    color: slateblue;
 }
 li .publicationAuthors {
-    position: relative;
-    left: 4px;
+    /* position: relative;
+    left: 4px; */
     width: 96%;
 }
 .publicationAuthors a {
@@ -187,10 +194,10 @@ li .publicationAuthors {
     background-color: #aaa;
 }
 li .publicationInfo {
-    position: relative;
-    left: 20px;
+    /* position: relative;
+    left: 20px; */
     margin-right: 50px;
-    color: #FF0000;
+    color: rgb(128, 0, 32);
 }
 
 /*Collapsible*/

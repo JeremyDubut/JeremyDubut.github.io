@@ -28,7 +28,7 @@ def publicationAuthors(
     for i, author in enumerate(authors):
         if i == 1 and nb_auth == 2:
             f.write(" and\n")
-        elif i == nb_auth - 1:
+        elif i == nb_auth - 1 and not i == 0:
             f.write(", and\n")
         elif not i == 0:
             f.write(",\n")
@@ -137,3 +137,25 @@ def publicationCollapsibleClose(
 ) -> ():
 
     f.write("\t\t</div>\n")
+
+def publicationListClose(
+    f: object,
+    typ: str
+) -> ():
+
+    if typ == "\"conference\"" or typ == "\"journaly\"":
+        f.write("</ol>\n\n")
+    else:
+        f.write("</ul>\n\n")
+
+def publicationListOpen(
+    f: object,
+    typ: str
+) -> ():
+
+    if typ == "\"conference\"":
+        f.write("<ol class=\"publicationList\" reversed>\n")
+    elif typ == "\"journaly\"":
+        f.write("<ol type=I class=\"publicationList\" reversed>\n")
+    else:
+        f.write("<ul class=\"publicationList\">\n")
