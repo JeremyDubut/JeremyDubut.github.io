@@ -99,7 +99,7 @@ def main() -> ():
 
             # list of types of publications
             pub_typ = [
-                ("\"next seminar\"", "Next Seminar(s)",[None],"ASC"),
+                ("\"next seminar\"","Next Seminar(s)",[None],"ASC"),
                 ("\"past seminar\"","Past Seminar(s)",years, "DESC")
             ]
 
@@ -131,11 +131,11 @@ def main() -> ():
                     for paperId, title, _, _, _, _, _, _, _, _, pub, _, abstract, keywords, comment in res:
 
                         # select the authors of the paper, by order
-                        cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url"]
+                        cols = ["Authors.Id","Authors.FName", "Authors.LName", "Authors.url", "Authors.Affiliation"]
                         sel = select(cols, join, condition="Authorship.PaperId="+str(paperId), ordering="Authorship.AuthorOrder ASC")
                         log.log(25,"\n"+sel)
-                        resp = cur.execute(sel).fetchall()
-                        log.log(26,f"Query answered with:\n{resp}")
+                        authors = cur.execute(sel).fetchall()
+                        log.log(26,f"Query answered with:\n{authors}")
 
                         # select the links
                         sel = select(["Links.Caption","Links.Url"], "Links", condition="Links.PaperId="+str(paperId))
@@ -145,7 +145,7 @@ def main() -> ():
 
                         # writing
                         publicationItemOpen(f,paperId,typ)
-                        publicationAuthors(f,resp,full=True,me=True)
+                        publicationAuthors(f,authors,full=True,me=True,affiliation=True)
                         publicationTitle(f,title)
                         publicationInfo(f,None,None,None,None,None,None,None,pub,None)
                         publicationComment(f,comment)

@@ -36,7 +36,8 @@ def publicationAuthors(
     f: object,
     authors: list[tuple[str]],
     full: bool = False,
-    me: bool = False
+    me: bool = False,
+    affiliation: bool = False
 ) -> ():
 
     if len(authors) > 0:
@@ -49,7 +50,7 @@ def publicationAuthors(
                 f.write(", and\n")
             elif not i == 0:
                 f.write(",\n")
-            publicationAuthor(f,author,full,me)
+            publicationAuthor(f,author,full,me,affiliation)
             if i == nb_auth - 1:
                 f.write(".<br>\n")
         f.write("\t\t\t\t</span>\n")
@@ -58,7 +59,8 @@ def publicationAuthor(
     f: object, 
     author: tuple[str], 
     full: bool = False,
-    me : bool = False
+    me : bool = False,
+    affiliation: bool = False
 ) -> ():
 
     if full:
@@ -66,10 +68,15 @@ def publicationAuthor(
     else:
         fname = author[1][0]+"."
 
-    if author[3] is None or ((not me) and author[0] == "me"):
-        f.write("\t\t\t\t\t"+fname+" "+author[2]+"")
+    if affiliation and author[4] is not None:
+        aff = " ("+author[4]+")"
     else:
-        f.write("\t\t\t\t\t<a href=\""+author[3]+"\">"+fname+" "+author[2]+"</a>")
+        aff = ""
+
+    if author[3] is None or ((not me) and author[0] == "me"):
+        f.write("\t\t\t\t\t"+fname+" "+author[2]+aff)
+    else:
+        f.write("\t\t\t\t\t<a href=\""+author[3]+"\">"+fname+" "+author[2]+"</a>"+aff)
 
 
 def publicationTitle(
