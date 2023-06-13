@@ -1,6 +1,22 @@
 h1 {
     text-align:center;
     color: slateblue;
+    height: 80px;
+}
+@media screen and (max-width:50em){
+    h1 {
+        height: 70px;
+    }
+}
+h1 img {
+    width: 50px;
+    height: 50px;
+}
+@media screen and (max-width:50em){
+    h1 img {
+        width: 40px;
+        height: 40px;
+    }
 }
 h2 {
     text-align:center;
@@ -11,7 +27,13 @@ h2 {
 @media screen and (max-width:50em){
     h2{scroll-margin-top: 5rem}
 }
-h3 {text-align:center;}
+h3 {
+    text-align:center;
+    scroll-margin-top: 10rem;
+}
+@media screen and (max-width:50em){
+    h3{scroll-margin-top: 5rem}
+}
 <!-- 		@media (prefers-color-scheme: dark) {
         svg {background-color: white;}
       } -->
@@ -58,15 +80,31 @@ header {
     padding-top: 60px; 
     transition: 0.2s; 
 }
-.sideMenu a {
+.sideMenuItem {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     display: block;
     transition: 0.3s;
     color: slateblue;
+    border-top: 1px solid;
+    border-color: #ccc;
 }
-.sideMenu a:hover {
+.sideMenuItem:hover {
+    background-color: #ccc;
+}
+.sideMenuSubItem {
+    padding: 8px 8px 8px 32px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    transition: 0.3s;
+    color: slateblue;
+    border-top: 1px dashed;
+    border-color: #ccc;
+}
+.sideMenuSubItem:hover {
     background-color: #ccc;
 }
 .sideMenu .sideMenuButtonClose {
@@ -74,17 +112,20 @@ header {
     top: 0;
     right: 0;
     margin-left: 50px;
-    padding: 1px 15px 3px 15px;
+    padding: 0px 8px 1px 8px;
     cursor: pointer;
+    text-decoration: none;
     color: #aaa;
-    font-size: 30px;
+    font-size: 25px;
     background-color: #eee;
-    padding: 1px 15px 3px 15px;
     border: none;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
+}
+.sideMenu .sideMenuButtonClose:hover {
+    background-color: #ccc;
 }
 
 /*Chapo*/
@@ -129,12 +170,34 @@ header {
     padding-left: .6rem;
     padding-right: .6rem;
     padding-top: .6rem;
-    padding-bottom: .6rem
+    padding-bottom: .6rem;
+    margin-right: -0.3rem;
+    border-left: 1px solid;
+    border-color: #ccc;
+    transition: 0.3s;
+}
+.chapoMenuSubItem {
+    display: inline-block;
+    padding-left: .6rem;
+    padding-right: .6rem;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    margin-right: -0.3rem;
+    border-left: 1px dashed;
+    border-color: #ccc;
+    transition: 0.3s;
 }
 .chapoMenuItem:hover {
     background-color: #ccc;
 }
 .chapoMenuItem a {
+    color: black;
+    text-decoration: none;
+}
+.chapoMenuSubItem:hover {
+    background-color: #ccc;
+}
+.chapoMenuSubItem a {
     color: black;
     text-decoration: none;
 }

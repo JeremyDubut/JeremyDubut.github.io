@@ -43,7 +43,7 @@ def main() -> ():
             for typ, head in pub_typ:
 
                 # write header
-                f.write("\t\t<h3>"+head+"</h3>\n\n")
+                f.write("\t\t<h3 id="+typ[1:-1]+">"+head+"</h3>\n\n")
                 publicationListOpen(f,typ)
                 # f.write("<ol class=\"publicationList\" reversed>\n")
 
@@ -110,7 +110,7 @@ def main() -> ():
 
                 for year in years:
                     if year is not None:
-                        f.write("\t\t<h3>"+str(year[0])+"</h3>\n\n")
+                        f.write("\t\t<h3 id="+str(year[0])+">"+str(year[0])+"</h3>\n\n")
 
                     publicationListOpen(f,typ)
 
