@@ -34,7 +34,9 @@ def publicationItemOpen(
 
 def publicationAuthors(
     f: object,
-    authors: list[tuple[str]]
+    authors: list[tuple[str]],
+    full: bool = False,
+    me: bool = False
 ) -> ():
 
     if len(authors) > 0:
@@ -47,21 +49,27 @@ def publicationAuthors(
                 f.write(", and\n")
             elif not i == 0:
                 f.write(",\n")
-            publicationAuthor(f,author)
+            publicationAuthor(f,author,full,me)
             if i == nb_auth - 1:
                 f.write(".<br>\n")
         f.write("\t\t\t\t</span>\n")
 
 def publicationAuthor(
     f: object, 
-    author: tuple[str]
+    author: tuple[str], 
+    full: bool = False,
+    me : bool = False
 ) -> ():
 
-    # f.write("\t\t<div class=\"publicationAuthor\" id=\""+author[0]+"\">\n")
-    if author[3] is None:
-        f.write("\t\t\t\t\t"+author[1][0]+". "+author[2]+"")
+    if full:
+        fname = author[1]
     else:
-        f.write("\t\t\t\t\t<a href=\""+author[3]+"\">"+author[1][0]+". "+author[2]+"</a>")
+        fname = author[1][0]+"."
+
+    if author[3] is None or ((not me) and author[0] == "me"):
+        f.write("\t\t\t\t\t"+fname+" "+author[2]+"")
+    else:
+        f.write("\t\t\t\t\t<a href=\""+author[3]+"\">"+fname+" "+author[2]+"</a>")
 
 
 def publicationTitle(
@@ -100,7 +108,10 @@ def publicationInfo(
             f.write(str(papnum)+":"+str(fpage)+"-"+str(papnum)+":"+str(lpage)+", ")
         else:
             f.write(str(fpage)+"-"+str(lpage)+", ")
-    f.write(pub+", "+str(year)+".\n")
+    if year is not None:
+        f.write(pub+", "+str(year)+".\n")
+    else:
+        f.write(pub+".\n")
     f.write("\t\t\t\t</div>\n")
 
 def publicationItemClose(

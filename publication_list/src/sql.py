@@ -2,9 +2,14 @@ def select(
     columns: list[str], 
     table: str, 
     condition: str = None, 
-    ordering: str = None) -> str:
+    ordering: str = None,
+    distinct: bool = False) -> str:
 
     query = "SELECT "
+
+    # distinct
+    if distinct:
+        query = query+"DISTINCT "
 
     # columns
     if len(columns) == 0:
