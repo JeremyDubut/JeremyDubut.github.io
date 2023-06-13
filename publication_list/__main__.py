@@ -92,21 +92,21 @@ def main() -> ():
             (f,postfix) = partition("IPS-seminar/index.html")
 
             # Get all the years of the seminars
-            sel = select(["Papers.Year"],"Papers",condition="Papers.Type=\"past seminar\"",distinct=True)
+            sel = select(["Papers.Year"],"Papers",condition="Papers.Type=\"past seminar\"",ordering="Papers.Year DESC",distinct=True)
             log.log(25,"\n"+sel)
             years = cur.execute(sel).fetchall()
             log.log(26,f"Query answered with:\n{years}")
 
             # list of types of publications
             pub_typ = [
-                ("\"next seminar\"", "Next Seminar(s)",[None]),
-                ("\"past seminar\"","Past Seminar(s)",years)
+                ("\"next seminar\"", "Next Seminar(s)",[None],"ASC"),
+                ("\"past seminar\"","Past Seminar(s)",years, "DESC")
             ]
 
-            for typ, head, years in pub_typ:
+            for typ, head, years, order in pub_typ:
 
                 # write header
-                f.write("\t<h2>"+head+"</h2>\n\n")
+                f.write("\t<h2 id="+typ[1:5]+">"+head+"</h2>\n\n")
 
                 for year in years:
                     if year is not None:
@@ -116,10 +116,11 @@ def main() -> ():
 
                     cond = "Papers.Type="+typ
                     if year is not None:
-                        cond = cond+" AND Papers.Year="+str(year)
+
+                        cond = cond+" AND Papers.Year="+str(year[0])
 
                     # Select all the papers
-                    sel = select([],"Papers", condition="Papers.Type="+typ, ordering="Papers.Id DESC")
+                    sel = select([],"Papers", condition=cond, ordering="Papers.Id "+order)
                     log.log(25,"\n"+sel)
                     res = cur.execute(sel).fetchall()
                     log.log(26,f"Query answered with:\n{res}")

@@ -27,14 +27,14 @@
 			<ul class="chapoMenuList">
 				<li class="chapoMenuItem"><a href="#">Home</a></li>
 				<li class="chapoMenuItem"><a href="#next">Next seminar(s)</a></li>
-				<li class="chapoMenuItem"><a href="#previous">Past seminars</a></li>
+				<li class="chapoMenuItem"><a href="#past">Past seminars</a></li>
 			</ul>
 		</nav>
 		<nav id="sideMenu" class="sideMenu">
 			<a href="javascript:void(0)" class="sideMenuButtonClose" onclick="closeMenu()">&#12294;</a>
 			<a href="#">Home</a>
 			<a href="#next">Next seminar(s)</a>
-			<a href="#previous">Past seminars</a>
+			<a href="#pasts">Past seminars</a>
 		</nav>
 	</header>
 	<div id="main">
@@ -48,16 +48,398 @@
 
 	<!-- tag for action -->
 
-	<h2>Next Seminar(s)</h2>
+	<h2 id=next>Next Seminar(s)</h2>
 
 		<ul style="list-style: none;" class="publicationList">
+			<li class="publicationItem next seminar" id=53>
+				<span class="publicationAuthors">
+					<a href="https://akihisayamada.github.io">Akihisa Yamada</a>.<br>
+				</span>
+				<div class="publicationTitle">To be added.</div>
+				<div class="publicationInfo">
+					Rehearsal for FSCD'23.
+				</div>
+				<div class="publicationComment">Wednesday June 14th, 1:30-3:00, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem next seminar" id=54>
+				<span class="publicationAuthors">
+					<a href="https://akihisayamada.github.io">Akihisa Yamada</a>.<br>
+				</span>
+				<div class="publicationTitle">To be added.</div>
+				<div class="publicationInfo">
+					Rehearsal for FSCD'23.
+				</div>
+				<div class="publicationComment">Wednesday June 28th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+					</div>
+				</div>
+			</li>
 		</ul>
 
-	<h2>Past Seminar(s)</h2>
+	<h2 id=past>Past Seminar(s)</h2>
+
+		<h3>2023</h3>
+
+		<ul style="list-style: none;" class="publicationList">
+			<li class="publicationItem past seminar" id=52>
+				<span class="publicationAuthors">
+					<a href="https://blanqui.gitlabpages.inria.fr/">Frédéric Blanqui</a>.<br>
+				</span>
+				<div class="publicationTitle">Encoding Type Universes Without Using Matching Modulo Associativity and Commutativity.</div>
+				<div class="publicationInfo">
+					Based on a paper at FSCD'22.
+				</div>
+				<div class="publicationComment">Wednesday May 21st 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						The encoding of proof systems and type theories in logical frameworks is key to
+						allow the translation of proofs from one system to the other. The λΠ-calculus
+						modulo rewriting is a powerful logical framework in which various systems have
+						already been encoded, including type systems with an infinite hierarchy of type
+						universes equipped with a unary successor operator and a binary max operator:
+						Matita, Coq, Agda and Lean. However, to decide the word problem in this
+						max-successor algebra, all the encodings proposed so far use rewriting with
+						matching modulo associativity and commutativity (AC), which is of high
+						complexity and difficult to integrate in usual algorithms for b-reduction and
+						type-checking. In this paper, we show that we do not need matching modulo AC by
+						enforcing terms to be in some special canonical form wrt associativity and
+						commutativity, and by using rewriting rules taking advantage of this canonical
+						form. This work has been implemented in the proof assistant Lambdapi.
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Links:</div>
+						<ul class="linksList">
+							<li class="linksItem"><a href=to be added>slides</a></li>
+							<li class="linksItem"><a href=https://drops.dagstuhl.de/opus/volltexte/2022/16305/>FSCD paper</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=51>
+				<span class="publicationAuthors">
+					<a href="https://staff.aist.go.jp/hitoshi.ohsaki/">Hitoshi Ohsaki</a>.<br>
+				</span>
+				<div class="publicationTitle">Egorov theorem and convergence of function sequence.</div>
+				<div class="publicationInfo">
+					Based on his book of mathematics.
+				</div>
+				<div class="publicationComment">Wednesday May 24th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Links:</div>
+						<ul class="linksList">
+							<li class="linksItem"><a href=../presentations/seminar-230524.pdf>slides</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=50>
+				<span class="publicationAuthors">
+					<a href="https://akihisayamada.github.io">Akihisa Yamada</a>.<br>
+				</span>
+				<div class="publicationTitle">Order theory, cardinality, and convergence in Isabelle/HOL.</div>
+				<div class="publicationInfo">
+					Based on ITP'23 paper.
+				</div>
+				<div class="publicationComment">Wednesday May 17th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						Directed sets are of fundamental interest in domain theory and topology. In
+						this paper, we formalize some results on directed sets in Isabelle/HOL, most
+						notably: under the axiom of choice, a poset has a supremum for every directed
+						set if and only if it does so for every chain; and a function between such
+						posets preserves suprema of directed sets if and only if it preserves suprema
+						of chains. The known pen-and-paper proofs of these results crucially use
+						uncountable transfinite sequences, which are not directly implementable in
+						Isabelle/HOL. We show how to emulate such proofs by utilizing Isabelle/HOL’s
+						ordinal and cardinal library. Thanks to the formalization, we relax some
+						conditions for the above results.
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						directed sets, completeness, scott continuous functions, ordinals, Isabelle/HOL
+						<br><br>
+						<div class="collapsibleContentTitle">Links:</div>
+						<ul class="linksList">
+							<li class="linksItem"><a href=../presentations/seminar-230517.pdf>slides</a></li>
+							<li class="linksItem"><a href=../papers/itp23.pdf>ITP paper</a></li>
+							<li class="linksItem"><a href=https://devel.isa-afp.org/entries/Directed_Sets.html>AFP entry</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=49>
+				<span class="publicationAuthors">
+					<a href="http://cl-informatik.uibk.ac.at/users/thiemann/">René Thiemann</a>.<br>
+				</span>
+				<div class="publicationTitle">From P ≠ NP to monotone circuits of super-polynomial size.</div>
+				<div class="publicationInfo">
+					Based on ongoing work with Lev Gordeev.
+				</div>
+				<div class="publicationComment">Thursday March 2nd,  10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						We report on our work to develop an Isabelle-formalization of a proof by Lev
+						Gordeev. That proof aims at showing that the NP-complete problem CLIQUE is not
+						contained in P, since any Boolean circuit that solves CLIQUE will have
+						super-polynomial size. Initially, minor flaws have been identified and could
+						quickly be repaired by mild adjustments of definitions and statements. However,
+						there also have been more serious problems, where then we multiple times
+						contacted Gordeev, who proposed more severe changes in the definitions and
+						statements. In every iteration, Isabelle quickly pointed us to those proof
+						steps that then needed to be adjusted, without having to perform a tedious
+						manual rechecking of all proofs. Although the overall proof is still in a
+						broken state, the problems are restricted to those parts that handle negations
+						in circuits. Consequently, the super-polynomial lower bound is valid for
+						monotone circuits: if any such circuit solves CLIQUE for graphs with m
+						vertices, then the size of the circuit is at least (m^(1/7))^(m^(1/8)) for
+						sufficiently large m.
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Links:</div>
+						<ul class="linksList">
+							<li class="linksItem"><a href=to be added>slides</a></li>
+							<li class="linksItem"><a href=https://www.isa-afp.org/entries/Clique_and_Monotone_Circuits.html>AFP entry</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=48>
+				<span class="publicationAuthors">
+					<a href="https://staff.aist.go.jp/hitoshi.ohsaki/">Hitoshi Ohsaki</a>.<br>
+				</span>
+				<div class="publicationTitle">Lebesgue's decomposition theorem.</div>
+				<div class="publicationInfo">
+					Based on his book of mathematics.
+				</div>
+				<div class="publicationComment">Wednesday January 25th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=47>
+				<span class="publicationAuthors">
+					<a href="https://staff.aist.go.jp/hitoshi.ohsaki/">Hitoshi Ohsaki</a>.<br>
+				</span>
+				<div class="publicationTitle">Radon-Nikodym and decomposition theorems.</div>
+				<div class="publicationInfo">
+					Based on his book of mathematics.
+				</div>
+				<div class="publicationComment">Thursday January 19th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=46>
+				<span class="publicationAuthors">
+					<a href="https://staff.aist.go.jp/hitoshi.ohsaki/">Hitoshi Ohsaki</a>.<br>
+				</span>
+				<div class="publicationTitle">Continuity and convergence.</div>
+				<div class="publicationInfo">
+					Based on his book of mathematics.
+				</div>
+				<div class="publicationComment">Thursday January 12th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+					</div>
+				</div>
+			</li>
+		</ul>
 
 		<h3>2022</h3>
 
 		<ul style="list-style: none;" class="publicationList">
+			<li class="publicationItem past seminar" id=45>
+				<span class="publicationAuthors">
+					<a href="https://jeremydubut.com">Jérémy Dubut</a>.<br>
+				</span>
+				<div class="publicationTitle">Crash course on Fourier transform.</div>
+				<div class="publicationInfo">
+					Based on various readings.
+				</div>
+				<div class="publicationComment">Wednesday December 7th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Links:</div>
+						<ul class="linksList">
+							<li class="linksItem"><a href=../presentations/seminar-221207.pdf>slides</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=44>
+				<span class="publicationAuthors">
+					<a href="http://www.lsv.fr/~felicissimo/">Thiago Felicissimo</a>.<br>
+				</span>
+				<div class="publicationTitle">Translating proofs from an impredicative type system to a predicative one.</div>
+				<div class="publicationInfo">
+					Based on a paper at CSL'23.
+				</div>
+				<div class="publicationComment">Thursday November 17th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						As the development of formal proofs is a time-consuming task, it is important
+						to devise ways of sharing the already written proofs to prevent wasting time
+						redoing them. One of the challenges in this domain is to translate proofs
+						written in proof assistants based on impredicative logics, such as Coq, Matita
+						and the HOL family, to proof assistants based on predicative logics like Agda,
+						whenever impredicativity is not used in an essential way. We present an
+						algorithm to do such a translation between a core impredicative type system and
+						a core predicative one allowing prenex universe polymorphism like in Agda. The
+						proposed translation is of course partial, but in practice allows one to
+						translate many proofs that do not use impredicativity in an essential way.
+						Indeed, it was implemented in the tool Predicativize and then used to translate
+						semi-automatically many non-trivial developments from Matita’s arithmetic
+						library to Agda, including Bertrand’s Postulate and Fermat’s Little Theorem,
+						which were not available in Agda yet. (Joint work with Frédéric Blanqui and
+						Ashish Kumar Barnawal)
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Links:</div>
+						<ul class="linksList">
+							<li class="linksItem"><a href=to be added>slides</a></li>
+							<li class="linksItem"><a href=https://arxiv.org/pdf/2211.05700.pdf>CSL paper</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=43>
+				<span class="publicationAuthors">
+					<a href="https://akihisayamada.github.io">Akihisa Yamada</a>.<br>
+				</span>
+				<div class="publicationTitle">Hedge transducers II.</div>
+				<div class="publicationInfo">
+					Follow-up from previous seminar.
+				</div>
+				<div class="publicationComment">Wednesday November 9th,  10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						Follow-up from previous seminar
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+					</div>
+				</div>
+			</li>
+			<li class="publicationItem past seminar" id=42>
+				<span class="publicationAuthors">
+					<a href="https://akihisayamada.github.io">Akihisa Yamada</a>.<br>
+				</span>
+				<div class="publicationTitle">Hedge transducers I.</div>
+				<div class="publicationInfo">
+					Based on various readings.
+				</div>
+				<div class="publicationComment">Thursday October 20th, 10:00-11:30, Rinkai center.</div>
+				<div class="collapsible">
+					<button class="collapsibleButton">
+						&#10507;
+					</button>
+					<div class="collapsibleContent">
+						<div class="collapsibleContentTitle">Abstract:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Key words:</div>
+						To be added
+						<br><br>
+						<div class="collapsibleContentTitle">Links:</div>
+						<ul class="linksList">
+							<li class="linksItem"><a href=to be added>slides</a></li>
+							<li class="linksItem"><a href=http://www.xml.gr.jp/relax/hedge_nice.html>Murata's work</a></li>
+							<li class="linksItem"><a href=https://www.sciencedirect.com/science/article/pii/S0019995868909996>Pair's paper (in French)</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
 			<li class="publicationItem past seminar" id=41>
 				<span class="publicationAuthors">
 					<a href="https://staff.aist.go.jp/hitoshi.ohsaki/">Hitoshi Ohsaki</a>.<br>
