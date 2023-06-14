@@ -144,7 +144,6 @@ def publicationCollapsibleContent(
 
     f.write("\t\t\t\t\t<div class=\"collapsibleContent\">\n")
     f.write("\t\t\t\t\t\t<div class=\"collapsibleContentTitle\">Abstract:</div>\n")
-    # f.write("\t\t\t\t"+abstract+"<br><br>\n")
     splitText(f,abstract)
     f.write("\t\t\t\t\t\t<br><br>\n")
     f.write("\t\t\t\t\t\t<div class=\"collapsibleContentTitle\">Key words:</div>\n")
@@ -153,7 +152,6 @@ def publicationCollapsibleContent(
         f.write("\t\t\t\t\t\t<br><br>\n")
         f.write("\t\t\t\t\t\t<div class=\"collapsibleContentTitle\">Links:</div>\n")
         f.write("\t\t\t\t\t\t<ul class=\"linksList\">\n")
-        # f.write("\t\t\t\tTo be done\n")
         for caption, url in links:
             f.write("\t\t\t\t\t\t\t<li class=\"linksItem\"><a href="+url+">"+caption+"</a></li>\n")
         f.write("\t\t\t\t\t\t</ul>\n")
