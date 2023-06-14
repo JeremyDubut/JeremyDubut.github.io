@@ -45,7 +45,6 @@ def main() -> ():
                 # write header
                 f.write("\t\t<h3 id="+typ[1:-1]+">"+head+"</h3>\n\n")
                 publicationListOpen(f,typ)
-                # f.write("<ol class=\"publicationList\" reversed>\n")
 
                 # Select all the papers
                 sel = select([],"Papers", condition="Papers.Type="+typ, ordering="Papers.Id DESC")
@@ -84,7 +83,6 @@ def main() -> ():
                     publicationItemClose(f)
 
                 publicationListClose(f,typ)
-                # f.write("</ol>\n\n")
 
         elif args.n == "seminar":
 
@@ -156,7 +154,6 @@ def main() -> ():
                         publicationItemClose(f)
 
                     publicationListClose(f,typ)
-                    # f.write("</ol>\n\n")
 
     # Making sure the postfix is written up and everyting closed
 
