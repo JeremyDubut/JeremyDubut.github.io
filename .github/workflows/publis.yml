@@ -1,0 +1,44 @@
+name: Publication Update
+run-name: Updating automatically the list of publications of the main page
+on: 
+push:
+  paths: 
+    - '**.db'
+    - '**.py'
+jobs:
+  Publication-Update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - run: |
+          echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - run: |
+          echo "Python is set up"
+      - name: update main page
+        run: |
+          echo "Main page log\n" > publication_list/log
+          python -m publication_list >> publication_list/log
+          echo "Main page updated"
+      - name: update seminar page
+        run: |
+          echo "Seminar page log\n" >> publication_list/log
+          python -m publication_list -n "seminar" >> publication_list/log
+          echo "Seminar page updated"
+      - name: git config
+        run: |
+          git config user.name "GitHub Action Bot"
+          git config user.email "<>"
+          echo "Git configured"
+      - name: git commit
+        run: |
+          git add index.html
+          git add IPS-seminar/index.html
+          git commit -m "Automatic update of site pages"
+          git push
+          echo "Index files pushed"
+      
