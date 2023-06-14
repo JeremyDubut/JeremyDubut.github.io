@@ -1,10 +1,10 @@
 name: Publication Update
 run-name: Updating automatically the list of publications of the main page
 on: 
-push:
-  paths: 
-    - '**.db'
-    - '**.py'
+  push:
+    paths: 
+      - '**.db'
+      - '**.py'
 jobs:
   Publication-Update:
     runs-on: ubuntu-latest
