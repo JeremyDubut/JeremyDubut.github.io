@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def partition(filename: str) -> (object,list[str]):
 
     # get the lines
@@ -17,6 +19,7 @@ def partition(filename: str) -> (object,list[str]):
             if l == "\t<!-- tag for action -->\n":
                 pref_done = True
                 g.write(l)
+                g.write("\t<!-- Last update on "+datetime.now().strftime("%d/%m/%Y %H:%M:%S")+" -->\n")
                 g.write("\n")
             else:
                 g.write(l)
