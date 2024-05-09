@@ -98,7 +98,7 @@ def main() -> ():
             # list of types of publications
             pub_typ = [
                 ("\"next seminar\"","Next Seminar(s)",[None],"ASC"),
-                ("\"past seminar\"","Past Seminar(s)",years, "DESC")
+                ("\"past seminar\"","Past Seminars",years, "DESC")
             ]
 
             for typ, head, years, order in pub_typ:
