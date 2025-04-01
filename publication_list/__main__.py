@@ -34,6 +34,7 @@ def main() -> ():
 
             # list of types of publications
             pub_typ = [
+                ("\"chapter\"", "Book chapters"),
                 ("\"journaly\"", "Journals"), 
                 ("\"conference\"","Conferences"), 
                 ("\"preprint\"","Preprints"), 
