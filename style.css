@@ -170,6 +170,23 @@ header {
         font-size: 1.5em;
     }
 }
+.chapoPicture {
+    border-radius: 50%;
+    position: absolute;
+    right: 10pt;
+    top: 10pt
+}
+@media screen and (max-width:50em){
+    .chapoPicture{display:none}
+}
+.mainPicture {
+    display: block; 
+    margin: auto;
+    border-radius: 50%
+}
+@media screen and (min-width:50em){
+    .mainPicture{display:none}
+}
 .chapoMenu {
     background-color: white;
     color: black;
